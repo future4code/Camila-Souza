@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #00203c;
+    color: #a6b8c7;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1, h2 {
+    color: white;
+    font-family: "Anton";
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+a:link {
+    color: #6f8ea9;
+}
+
+a:visited {
+    color: #36648b;
+}
+
+a:hover {
+    color: rgb(197, 96, 59);
+}
+
+a:active {
+    color:rgb(255, 110, 53);
+    font-weight: bold;
+}
+
+.tardis {
+    color: #00060b;
+    font-weight: lighter;
+    background-color: #b6bfc7;
+    padding-right: 6vw;
+    padding-left: 6vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+#icones {
+    margin-bottom: 3vh;
+}
+
+#boas-vindas {
+    font-size: larger;
+}
