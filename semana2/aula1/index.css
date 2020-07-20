@@ -139,6 +139,10 @@ td button:active {
     height: 100px;
 }
 
+#busca{
+    border-style: none none solid none;
+}
+
 
 #back-button {
     background-color: white;
