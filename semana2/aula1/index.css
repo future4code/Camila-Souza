@@ -55,8 +55,8 @@ div img {
 }
 
 .container {
-    Padding-top: 15vh;
-    height: 500px;
+    Padding-top: 10vh;
+    height: 35vh;
     text-align: center;
 }
 
@@ -72,12 +72,24 @@ div img {
   **/
 
 #container-de-descricao {
+    padding-left: 35vw;
+    padding-right: 35vw;
     background-color: #2274a5;
     color: white;
 }
 
 #container-de-descricao>ol {
-    padding: 15px 0px;
+    padding-top: 1.5vh;
+    padding-right: 5vw;
+    padding-bottom: 1.5vh;
+    padding-left: 5vw;
+}
+
+#container-de-descricao>p {
+    margin: auto;
+    display: block;
+    width: 20vw;
+
 }
 
 #container-para-comprar {
