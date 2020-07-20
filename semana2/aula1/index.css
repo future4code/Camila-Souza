@@ -150,6 +150,11 @@ td button:active {
 
 #back-button {
     background-color: white;
+    display: block;
+    margin-top: 10vh;
+    margin-right: auto;
+    margin-bottom: 10vh;
+    margin-left: auto;
     width: 100px;
     height: 20px;
     border: 1px solid black;
