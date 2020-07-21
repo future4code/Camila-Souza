@@ -88,6 +88,11 @@ button {
     width: 17vw;
 
 }
+#form-centralizado {
+    width: 40%;
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+}
 
 #habilidades {
     padding-top: 3vh;
