@@ -7,6 +7,7 @@ body {
     color: white;
 }
 
+semana2-aula2-exercicio3
 #top-container {
     display: grid;
     height: 5vh;
@@ -19,18 +20,23 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: green;
+  background-color: green;
 }
 
+
 .yellow-background {
+semana2-aula2-exercicio3
     display: flex;
     align-items: center;
     justify-content: center;
     height: 5vh;
-    background-color: yellow;
-}
+  background-color: yellow;
+
+  }
+
 
 .pink-background {
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,10 +80,11 @@ body {
     align-items: center;
     justify-content: center;
     height: 15vh;
-    background-color: red;
-}
+
+  }
 
 .lightgreen-background {
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,6 +93,7 @@ body {
 }
 
 .purple-background {
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -93,3 +101,4 @@ body {
     text-align: center;
     background-color: purple;
 }
+
