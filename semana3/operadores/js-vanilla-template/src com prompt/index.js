@@ -49,7 +49,7 @@ listaDeTarefas.push(tarefa1)
 listaDeTarefas.push(tarefa2)
 listaDeTarefas.push(tarefa3)
 console.log (listaDeTarefas)
-const indiceDeTarefas = prompt("Indique uma tarefa das citadas anteriormente que você realizou hoje? Indique numericamente, 0, 1 ou 2")
+const indiceDeTarefas = Number(prompt("Indique uma tarefa das citadas anteriormente que você realizou hoje? Indique numericamente, 0, 1 ou 2"))
 listaDeTarefas.splice(indiceDeTarefas, 1)
 console.log (listaDeTarefas)
 //4.
