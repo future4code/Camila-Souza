@@ -138,9 +138,6 @@ const alunoTurno = String(prompt("Em qual turno você estuda? Responda M para ma
  console.log ("Quantidade de Ingressos: " + ingressosQuant + " ingressos")
  console.log ("---Valores---")
  
- /* 
- Valores - Tentativa 1 - fail
-
  const valorDOSF1 = 1320
  const valorDOSF2 = 880
  const valorDOSF3 = 550
@@ -153,7 +150,116 @@ const alunoTurno = String(prompt("Em qual turno você estuda? Responda M para ma
  const valorDOFI2 = 1320
  const valorDOFI3 = 880
  const valorDOFI4 = 330
- const realDolar = 0.24390244
+ const realDolar = 4.1
+
+ if (jogoTipo === "DO" && jogoEtapa === "DT" && categoria === 1) {
+     console.log ("Valor do ingresso: R$ " + valorDODT1 + ",00")
+ } else if (jogoTipo === "DO" && jogoEtapa === "DT" && categoria === 2) {
+    console.log ("Valor do ingresso: R$ " + valorDODT2 + ",00")
+ } else if (jogoTipo === "DO" && jogoEtapa === "DT" && categoria === 3) {
+    console.log ("Valor do ingresso: R$ " + valorDODT3 + ",00")
+ } else if (jogoTipo === "DO" && jogoEtapa === "DT" && categoria === 4) {
+    console.log ("Valor do ingresso: R$ " + valorDODT4 + ",00")
+ } else if (jogoTipo === "DO" && jogoEtapa === "SF" && categoria === 1) {
+    console.log ("Valor do ingresso: R$ " + valorDOSF1 + ",00")
+ } else if (jogoTipo === "DO" && jogoEtapa === "SF" && categoria === 2) {
+    console.log ("Valor do ingresso: R$ " + valorDOSF2 + ",00")
+ } else if (jogoTipo === "DO" && jogoEtapa === "SF" && categoria === 3) {
+    console.log ("Valor do ingresso: R$ " + valorDOSF3 + ",00")
+ } else if (jogoTipo === "DO" && jogoEtapa === "SF" && categoria === 4) {
+    console.log ("Valor do ingresso: R$ " + valorDOSF4 + ",00")
+ } else if (jogoTipo === "DO" && jogoEtapa === "FI" && categoria === 1) {
+    console.log ("Valor do ingresso: R$ " + valorDOFI1 + ",00")
+ } else if (jogoTipo === "DO" && jogoEtapa === "FI" && categoria === 2) {
+    console.log ("Valor do ingresso: R$ " + valorDOFI2 + ",00")
+ } else if (jogoTipo === "DO" && jogoEtapa === "FI" && categoria === 3) {
+    console.log ("Valor do ingresso: R$ " + valorDOFI3 + ",00")
+ } else if (jogoTipo === "DO" && jogoEtapa === "FI" && categoria === 4) {
+    console.log ("Valor do ingresso: R$ " + valorDOFI4 + ",00")
+ } else if (jogoTipo === "IN" && jogoEtapa === "DT" && categoria === 1) {
+    console.log ("Valor do ingresso: R$ " + valorDODT1 + ",00")
+} else if (jogoTipo === "IN" && jogoEtapa === "DT" && categoria === 2) {
+   console.log ("Valor do ingresso: U$ " + valorDODT2 / realDolar)
+} else if (jogoTipo === "IN" && jogoEtapa === "DT" && categoria === 3) {
+   console.log ("Valor do ingresso: U$ " + valorDODT3 / realDolar)
+} else if (jogoTipo === "IN" && jogoEtapa === "DT" && categoria === 4) {
+   console.log ("Valor do ingresso: U$ " + valorDODT4 / realDolar)
+} else if (jogoTipo === "IN" && jogoEtapa === "SF" && categoria === 1) {
+   console.log ("Valor do ingresso: U$ " + valorDOSF1 / realDolar)
+} else if (jogoTipo === "IN" && jogoEtapa === "SF" && categoria === 2) {
+   console.log ("Valor do ingresso: U$ " + valorDOSF2 / realDolar)
+} else if (jogoTipo === "IN" && jogoEtapa === "SF" && categoria === 3) {
+   console.log ("Valor do ingresso: U$ " + valorDOSF3 / realDolar)
+} else if (jogoTipo === "IN" && jogoEtapa === "SF" && categoria === 4) {
+   console.log ("Valor do ingresso: U$ " + valorDOSF4 / realDolar)
+} else if (jogoTipo === "IN" && jogoEtapa === "FI" && categoria === 1) {
+   console.log ("Valor do ingresso: U$ " + valorDOFI1 / realDolar)
+} else if (jogoTipo === "IN" && jogoEtapa === "FI" && categoria === 2) {
+   console.log ("Valor do ingresso: U$ " + valorDOFI2 / realDolar)
+} else if (jogoTipo === "IN" && jogoEtapa === "FI" && categoria === 3) {
+   console.log ("Valor do ingresso: U$ " + valorDOFI3 / realDolar)
+} else if (jogoTipo === "IN" && jogoEtapa === "FI" && categoria === 4) {
+   console.log ("Valor do ingresso: U$ " + valorDOFI4 / realDolar)
+} else {
+    console.log ("Tivemos um problema com o seu pedido. Por favor, revise-o")
+}
+
+if (jogoTipo === "DO" && jogoEtapa === "DT" && categoria === 1) {
+    console.log ("Valor total: R$ " + valorDODT1 + ",00")
+} else if (jogoTipo === "DO" && jogoEtapa === "DT" && categoria === 2) {
+   console.log ("Valor total: R$ " + valorDODT2 * ingressosQuant + ",00")
+} else if (jogoTipo === "DO" && jogoEtapa === "DT" && categoria === 3) {
+   console.log ("Valor total: R$ " + valorDODT3 * ingressosQuant + ",00")
+} else if (jogoTipo === "DO" && jogoEtapa === "DT" && categoria === 4) {
+   console.log ("Valor total: R$ " + valorDODT4 * ingressosQuant + ",00")
+} else if (jogoTipo === "DO" && jogoEtapa === "SF" && categoria === 1) {
+   console.log ("Valor total: R$ " + valorDOSF1 * ingressosQuant + ",00")
+} else if (jogoTipo === "DO" && jogoEtapa === "SF" && categoria === 2) {
+   console.log ("Valor total: R$ " + valorDOSF2 * ingressosQuant + ",00")
+} else if (jogoTipo === "DO" && jogoEtapa === "SF" && categoria === 3) {
+   console.log ("Valor total: R$ " + valorDOSF3 * ingressosQuant + ",00")
+} else if (jogoTipo === "DO" && jogoEtapa === "SF" && categoria === 4) {
+   console.log ("Valor total: R$ " + valorDOSF4 * ingressosQuant + ",00")
+} else if (jogoTipo === "DO" && jogoEtapa === "FI" && categoria === 1) {
+   console.log ("Valor total: R$ " + valorDOFI1 * ingressosQuant + ",00")
+} else if (jogoTipo === "DO" && jogoEtapa === "FI" && categoria === 2) {
+   console.log ("Valor total: R$ " + valorDOFI2 * ingressosQuant + ",00")
+} else if (jogoTipo === "DO" && jogoEtapa === "FI" && categoria === 3) {
+   console.log ("Valor total: R$ " + valorDOFI3 * ingressosQuant + ",00")
+} else if (jogoTipo === "DO" && jogoEtapa === "FI" && categoria === 4) {
+   console.log ("Valor total: R$ " + valorDOFI4 * ingressosQuant + ",00")
+} else if (jogoTipo === "IN" && jogoEtapa === "DT" && categoria === 1) {
+   console.log ("Valor total: R$ " + valorDODT1 * ingressosQuant + ",00")
+} else if (jogoTipo === "IN" && jogoEtapa === "DT" && categoria === 2) {
+  console.log ("Valor total: U$ " + valorDODT2 * ingressosQuant / realDolar)
+} else if (jogoTipo === "IN" && jogoEtapa === "DT" && categoria === 3) {
+  console.log ("Valor total: U$ " + valorDODT3 * ingressosQuant / realDolar)
+} else if (jogoTipo === "IN" && jogoEtapa === "DT" && categoria === 4) {
+  console.log ("Valor total: U$ " + valorDODT4 * ingressosQuant / realDolar)
+} else if (jogoTipo === "IN" && jogoEtapa === "SF" && categoria === 1) {
+  console.log ("Valor total: U$ " + valorDOSF1 * ingressosQuant / realDolar)
+} else if (jogoTipo === "IN" && jogoEtapa === "SF" && categoria === 2) {
+  console.log ("Valor total: U$ " + valorDOSF2 * ingressosQuant / realDolar)
+} else if (jogoTipo === "IN" && jogoEtapa === "SF" && categoria === 3) {
+  console.log ("Valor total: U$ " + valorDOSF3 * ingressosQuant / realDolar)
+} else if (jogoTipo === "IN" && jogoEtapa === "SF" && categoria === 4) {
+  console.log ("Valor total: U$ " + valorDOSF4 * ingressosQuant / realDolar)
+} else if (jogoTipo === "IN" && jogoEtapa === "FI" && categoria === 1) {
+  console.log ("Valor total: U$ " + valorDOFI1 * ingressosQuant / realDolar)
+} else if (jogoTipo === "IN" && jogoEtapa === "FI" && categoria === 2) {
+  console.log ("Valor total: U$ " + valorDOFI2 * ingressosQuant / realDolar)
+} else if (jogoTipo === "IN" && jogoEtapa === "FI" && categoria === 3) {
+  console.log ("Valor total: U$ " + valorDOFI3 * ingressosQuant / realDolar)
+} else if (jogoTipo === "IN" && jogoEtapa === "FI" && categoria === 4) {
+  console.log ("Valor total: U$ " + valorDOFI4 * ingressosQuant / realDolar)
+} else {
+   console.log ("Tivemos um problema com o seu pedido. Por favor, revise-o")
+}
+
+
+
+ /* 
+ Valores - Tentativa 1 - fail
 
  switch (jogoTipo) {
     case "DO":
