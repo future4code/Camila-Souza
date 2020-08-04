@@ -1,7 +1,6 @@
 function addTask() {
     const userTask = document.getElementById("task")
     let toDo = userTask.value
-    console.log(toDo)
     const day = document.getElementById("dias-semana")
     let byDay = day.value
 
@@ -41,13 +40,13 @@ function addTask() {
 }
 
 function deleteAll() {
-    const blank = document.getElementsByClassName("tasks")
-            blank.innerHTML = ""
-        }
- 
-function done() {
-    const line = document.getElementsByClassName("tasks")
-        
-
-
+    const blank = document.getElementsByTagName("ul")
+            for (i=0; i<blank.length; i++){
+            blank[i].innerHTML = ""
+            }
 }
+ 
+// function done() {
+//     const strike = document.getElementsByTagName("li").value
+//     strike.innerHTML = "<strike></strike>"
+// }
