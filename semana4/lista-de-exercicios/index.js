@@ -24,4 +24,16 @@ Exercícios de interpretação de código
             b. Verifica quais são os números ímpares e envia para a const array2
             c. Verifica o número de elementos do array da const array2
             d. Imprime no console: 8
-*/
+    4.  Para o console.log(numero1)
+            a. Puxa a const numeros
+            b. Verifica se os elementos no index são < do que o let numero1
+            c. Caso seja <, considera o numero1 como número
+            d. Imprime no console: Infinity
+                Obs.: Suponho....
+        Para o console.log(numero2)
+            a. Puxa a const numeros
+            b. Verifica se os elementos no index são < do que o let numero2(0)
+            c. Caso seja <, considera o numero2 como número
+            d. Caso seja >, considera o elemento do array como número
+            e. Imprime no console (em linhas separadas): 25 25 55 64 121 121 121 121 121 121 121 121 121 283 283 283 283 283 283 283 283 283 283 283 1590
+*/  
