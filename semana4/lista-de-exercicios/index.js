@@ -55,3 +55,10 @@ Exercícios de Lógica de Programação
                 false ou true
                     true
 */
+// 3. Não visualizo a resposta com o while, então faria com o for dessa forma:
+    // const numerosPares = []
+    // const numeroEscolhido = Number(prompt("Digite um número inteiro positivo"))
+    // for (i=0; i<numeroEscolhido; i++) {
+    //     numerosPares.push += i*2 + " "
+    // }
+    // console.log(numerosPares)
