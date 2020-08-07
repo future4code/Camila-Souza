@@ -37,3 +37,21 @@ Exercícios de interpretação de código
             d. Caso seja >, considera o elemento do array como número
             e. Imprime no console (em linhas separadas): 25 25 55 64 121 121 121 121 121 121 121 121 121 283 283 283 283 283 283 283 283 283 283 283 1590
 */  
+/*
+Exercícios de Lógica de Programação
+    1. 
+    2.  a. true e false e false
+                false
+        b. (true e false) ou true
+                false ou true
+                    true
+        c. (false ou true) e (false ou true)
+                true e true
+                    true
+        d. !(false e true) ou !(true e true)
+                true ou false
+                    true
+        e. (false e false) ou (true e true e true)
+                false ou true
+                    true
+*/
