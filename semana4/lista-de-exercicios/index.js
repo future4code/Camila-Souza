@@ -11,5 +11,17 @@ Exercícios de interpretação de código
         Para a const segundoMontante:
             a. Puxa o case default do switch(tipoDeInvestimento)
             b. Imprime no console: "TIPO DE INVESTIMENTO INFORMADO INCORRETO!"
-    3.
+    3.  Para o console.log ("Quantidade total de números", numeros.length)
+            a. Puxa a const numeros e verifica quantos elementos a array dele tem
+            b. Imprime no console: 14
+        Para o console.log (array1.length)
+            a. Puxa a const numeros
+            b. Verifica quais são os números pares e envia para a const array1
+            c. Verifica o número de elementos do array da const array1
+            d. Imprime no console: 6
+        Para o console.log (array2.length)
+            a. Puxa a const numeros
+            b. Verifica quais são os números ímpares e envia para a const array2
+            c. Verifica o número de elementos do array da const array2
+            d. Imprime no console: 8
 */
