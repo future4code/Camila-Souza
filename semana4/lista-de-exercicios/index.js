@@ -63,18 +63,53 @@ Exercícios de Lógica de Programação
         // }
         // console.log(numerosPares)
 //  4.
-        const triangulo = []
-        const numero1 = Number(prompt("Digite a medida em centímetros do primeiro lado do seu triângulo"))
-            triangulo.push(numero1)
-        const numero2 = Number(prompt("Digite a medida em centímetros do segundo lado do seu triângulo"))
-            triangulo.push(numero2)
-        const numero3 = Number(prompt("Digite a medida em centímetros do terceiro lado do seu triângulo"))
-            triangulo.push(numero3)
-            console.log(triangulo)
-        if (numero1===numero2 && numero2===numero3) {
-            console.log("O seu triângulo é equilátero")
-        } else if (numero1!==numero2 && numero2!==numero3 && numero1!==numero3) {
-            console.log("O seu triângulo é escaleno")
-        } else {
-            console.log("O seu triângulo é isósceles")
-        }
+        // const triangulo = []
+        // const numero1 = Number(prompt("Digite a medida em centímetros do primeiro lado do seu triângulo"))
+        //     triangulo.push(numero1)
+        // const numero2 = Number(prompt("Digite a medida em centímetros do segundo lado do seu triângulo"))
+        //     triangulo.push(numero2)
+        // const numero3 = Number(prompt("Digite a medida em centímetros do terceiro lado do seu triângulo"))
+        //     triangulo.push(numero3)
+        //     console.log(triangulo)
+        // if (numero1===numero2 && numero2===numero3) {
+        //     console.log("O seu triângulo é equilátero")
+        // } else if (numero1!==numero2 && numero2!==numero3 && numero1!==numero3) {
+        //     console.log("O seu triângulo é escaleno")
+        // } else {
+        //     console.log("O seu triângulo é isósceles")
+        // }
+    /* 5.
+        i.
+          const entrada = [15,30]
+            if(entrada[0]<entrada[1]){
+                console.log("O maior é: " + entrada[1])
+            } else if (entrada[0]>entrada[1]){
+                console.log("O maior é: " + entrada[0])
+            } else {}
+        ii.
+            if (entrada[0]/entrada[1] %2 === 0){
+                console.log(entrada[0] + " é divisível por " + entrada[1])
+            } else {
+                console.log(entrada[0] + " não é divisível por " + entrada[1])
+            }
+            if (entrada[1]/entrada[0] %2 === 0){
+                console.log(entrada[1] + " é divisível por " + entrada[0])
+            } else {
+                console.log(entrada[1] + " não é divisível por " + entrada[0])
+            }
+        iii.
+            const maior = []
+            const menor = []
+            if (entrada[0]>entrada[1]){
+                maior.push(entrada[0])
+                menor.push(entrada[1])
+            } else if(entrada[0]<entrada[1]){
+                maior.push(entrada[1])
+                menor.push(entrada[0])
+            } else {
+
+            }
+            const diferenca = maior - menor
+            console.log("A diferença entre eles é " + diferenca)
+    */
+   
