@@ -112,4 +112,10 @@ Exercícios de Lógica de Programação
             const diferenca = maior - menor
             console.log("A diferença entre eles é " + diferenca)
     */
-   
+/*
+Exercícios de funções 
+    1.  Não sei fazer funcionar
+    2.  Fica saindo com o () => não sei pq
+    const hW = () => "Hello World!"
+    console.log(hW)
+*/
