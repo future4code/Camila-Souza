@@ -55,10 +55,26 @@ Exercícios de Lógica de Programação
                 false ou true
                     true
 */
-// 3. Não visualizo a resposta com o while, então faria com o for dessa forma:
-    // const numerosPares = []
-    // const numeroEscolhido = Number(prompt("Digite um número inteiro positivo"))
-    // for (i=0; i<numeroEscolhido; i++) {
-    //     numerosPares.push += i*2 + " "
-    // }
-    // console.log(numerosPares)
+//  3.  Não visualizo a resposta com o while, então faria com o for dessa forma:
+        // const numerosPares = []
+        // const numeroEscolhido = Number(prompt("Digite um número inteiro positivo"))
+        // for (i=0; i<numeroEscolhido; i++) {
+        //     numerosPares.push += i*2 + " "
+        // }
+        // console.log(numerosPares)
+//  4.
+        const triangulo = []
+        const numero1 = Number(prompt("Digite a medida em centímetros do primeiro lado do seu triângulo"))
+            triangulo.push(numero1)
+        const numero2 = Number(prompt("Digite a medida em centímetros do segundo lado do seu triângulo"))
+            triangulo.push(numero2)
+        const numero3 = Number(prompt("Digite a medida em centímetros do terceiro lado do seu triângulo"))
+            triangulo.push(numero3)
+            console.log(triangulo)
+        if (numero1===numero2 && numero2===numero3) {
+            console.log("O seu triângulo é equilátero")
+        } else if (numero1!==numero2 && numero2!==numero3 && numero1!==numero3) {
+            console.log("O seu triângulo é escaleno")
+        } else {
+            console.log("O seu triângulo é isósceles")
+        }
