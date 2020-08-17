@@ -2,7 +2,7 @@ import React from 'react';
 import Question from './Question';
 import DropDown from './DropDown';
 
-function Etapa3() {
+function Etapa3(){
   return (
     <div>
         <h1>ETAPA 3 - Informações gerais de ensino</h1>
@@ -13,6 +13,7 @@ function Etapa3() {
                 "Curso técnico",
                 "Curso de língua estrangeira",
             ]} />
+        <br></br>
     </div>
   );
 }

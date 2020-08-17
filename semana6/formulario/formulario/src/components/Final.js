@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Final  () {
+function Final(){
   return (
     <div>
         <h1>O formulário acabou</h1>

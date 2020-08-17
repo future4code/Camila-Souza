@@ -2,7 +2,7 @@ import React from 'react';
 import Question from './Question';
 import DropDown from './DropDown';
 
-class Etapa1 extends React.Component {
+class Etapa1 extends React.Component{
     render() {
         return (
             <div>
@@ -11,7 +11,7 @@ class Etapa1 extends React.Component {
                <Question question={"2. Qual a sua idade?"} />
                <Question question={"3. Qual o seu e-mail"} />
                <DropDown question={"4. Qual a sua escolaridade?"} 
-                    option={[
+                    options={[
                         "Ensino fundamental incompleto",
                         "Ensino fundamental completo",
                         "Ensino médio incompleto",
@@ -22,6 +22,7 @@ class Etapa1 extends React.Component {
                         "Pós-graduação completa",
                     ]}
                 />
+                <br></br>
             </div>
         );
 }}
