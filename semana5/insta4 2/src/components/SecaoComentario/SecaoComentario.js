@@ -1,5 +1,16 @@
 import React, {Component} from 'react'
-import './SecaoComentario.css'
+
+import styled from 'styled-components';
+
+const CommentContainer = styled.section`
+	display: flex;
+    justify-content: center;
+    padding: 5px;
+`
+const InputComment = styled.span`
+    width: 100%;
+	margin-right: 5px;
+	`
 
 export class SecaoComentario extends Component {
 	state = {
@@ -13,15 +24,15 @@ export class SecaoComentario extends Component {
 	render() {
 		console.log(this.state.comentario)
 		return (
-		<div className={'comment-container'}>
-			<input
+		<CommentContainer>
+			<InputComment
 				className={'input-comentario'}
 				placeholder={'Comentário'}
 				value={this.state.comentario}
 				onChange={this.onChangeComentario}
 			/>
 			<button onClick={this.props.aoEnviar}>Enviar</button>
-		</div>
+		</CommentContainer>
 		)
 	}
 }
