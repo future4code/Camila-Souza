@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { darkGrayLabenu, paleTealLabenu } from "../../constants/colors";
+import { darkGrayLabenu, paleTealLabenu, orangeLabenu } from "../../constants/colors";
 
 export const FooterDiv = styled.div`
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
-    grid-template-rows: 10px;
+    grid-template-rows: 30px;
     background-color: ${darkGrayLabenu};
     padding: 1vh 1vw;
     color: ${paleTealLabenu};
@@ -14,27 +14,40 @@ export const FooterDiv = styled.div`
 
 export const Labex = styled.span`
     grid-column: 1/2;
+    grid-row: 1/2;
+    align-self: center;
+    justify-self: center;
+    :hover {
+        color: ${orangeLabenu}
+    };
 `
 
 export const PrivacyPolicy = styled.span`
     grid-column: 3/4;
+    grid-row: 1/2;
+    align-self: center;
+    justify-self: center;
+    :hover {
+            color: ${orangeLabenu}
+        };
+
 `
 
 export const Social = styled.span`
     grid-column: 2/3;
-
-`
-
-export const IconsFlex = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-
+    grid-row: 1/2;
+    align-self: center;
+    justify-self: center;
 `
 
 export const Image = styled.img`
     height: 20px;
-
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 2px solid ${darkGrayLabenu};
+    border-radius: 50%;
+    :hover {
+        border: 2px solid ${orangeLabenu}
+    };
 `
 

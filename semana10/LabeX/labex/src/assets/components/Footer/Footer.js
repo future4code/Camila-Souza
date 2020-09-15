@@ -13,13 +13,11 @@ const Footer = () => {
             <Labex>LabeX©</Labex>
             <PrivacyPolicy>Privacy Policy</PrivacyPolicy>
             <Social>
-                <IconsFlex>
-                    <Image src= {FacebookIcon} alt="Facebook"></Image>
-                    <Image src= {TwitterIcon} alt="Twitter"></Image>
-                    <Image src= {YoutubeIcon} alt="YouTube"></Image>
-                    <Image src= {WhatsAppIcon} alt="WhatsApp"></Image>
-                    <Image src= {LinkedINIcon} alt="LinkedIN"></Image>
-                </IconsFlex>
+                <Image src= {FacebookIcon} alt="Facebook" id="fb"></Image>
+                <Image src= {TwitterIcon} alt="Twitter" id="tw"></Image>
+                <Image src= {YoutubeIcon} alt="YouTube" id="yt"></Image>
+                <Image src= {WhatsAppIcon} alt="WhatsApp" id="wa"></Image>
+                <Image src= {LinkedINIcon} alt="LinkedIN" id="li"></Image>
             </Social>
         </FooterDiv>
     )
