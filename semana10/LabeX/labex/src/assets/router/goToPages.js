@@ -7,15 +7,15 @@ export const goToHomePage = (history) => {
 };
 
 export const goToApplicationPage = (history) => {
-    history.push("/inscricao/");
+    history.push("/application-form/");
 };
 
 export const goToCreateTripPage = (history) => {
-    history.push("/criarviagem/");
+    history.push("/trip/create/");
 };
 
 export const goToListTripPage = (history) => {
-    history.push("/listadeviagens/");
+    history.push("/trip/list/");
 };
 
 export const goToLoginPage = (history) => {
@@ -23,5 +23,5 @@ export const goToLoginPage = (history) => {
 };
 
 export const goToTripDetailsPage = (history) => {
-    history.push(`/detalhesdaviagem/${id}`);
+    history.push("/trip/details/");
 };

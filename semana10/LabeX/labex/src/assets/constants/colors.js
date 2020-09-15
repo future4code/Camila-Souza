@@ -1,4 +1,4 @@
-export const paleTealLabenu = "##e3e5e2";
+export const paleTealLabenu = "#e3e5e2";
 export const yellowLabenu = "#fbb44c";
 export const lightYellowLabenu = "#fad69b";
 export const orangeLabenu = "#F27D1E";
