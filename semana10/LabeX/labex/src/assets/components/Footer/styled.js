@@ -18,7 +18,8 @@ export const Labex = styled.span`
     align-self: center;
     justify-self: center;
     :hover {
-        color: ${orangeLabenu}
+        color: ${orangeLabenu};
+        cursor: pointer;
     };
 `
 
@@ -28,7 +29,8 @@ export const PrivacyPolicy = styled.span`
     align-self: center;
     justify-self: center;
     :hover {
-            color: ${orangeLabenu}
+            color: ${orangeLabenu};
+            cursor: pointer;
         };
 
 `
@@ -40,14 +42,27 @@ export const Social = styled.span`
     justify-self: center;
 `
 
-export const Image = styled.img`
+export const ImageGray = styled.img`
     height: 20px;
     margin-left: 10px;
     margin-right: 10px;
     border: 2px solid ${darkGrayLabenu};
     border-radius: 50%;
     :hover {
-        border: 2px solid ${orangeLabenu}
+        border: 2px solid ${orangeLabenu};
+        /* display: none; */
     };
 `
+
+// export const ImageColor = styled.img`
+//     height: 20px;
+//     margin-left: 10px;
+//     margin-right: 10px;
+//     border: 2px solid ${darkGrayLabenu};
+//     border-radius: 50%;
+//     display:none;
+//     :hover {
+//         display: inline;
+//     };
+// `
 

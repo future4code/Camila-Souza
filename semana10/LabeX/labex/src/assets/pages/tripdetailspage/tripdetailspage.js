@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import { goToHomePage, goToApplicationPage, goToCreateTripPage, goToListTripPage, goToLoginPage } from "../../router/goToPages";
 
@@ -25,6 +26,7 @@ const TripDetailsPage = () => {
             <button onClick={() => goToHomePage(history)}>
                 HomePage
             </button>
+            <Footer />
         </div>
     )
 };
