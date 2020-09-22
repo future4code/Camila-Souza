@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import TripImage from "../../images/rocketlaunch.jpg";
-import { darkGrayLabenu, lightYellowLabenu, orangeLabenu, paleTealLabenu } from "../../constants/colors";
+import { darkGrayLabenu, orangeLabenu, paleTealLabenu } from "../../constants/colors";
 
 export const TripContainer= styled.span`
     display: grid;
@@ -16,11 +16,14 @@ export const ApplicationButton= styled.button`
     justify-self: center;
     align-self: center;
     border-radius: 10px;
+    border: thin solid ${darkGrayLabenu};
     background-color: ${darkGrayLabenu};
-    color: ${lightYellowLabenu};
+    color: ${paleTealLabenu};
+    font-weight: bold;
     :hover {
+        border: thin solid ${orangeLabenu};
         background-color: ${orangeLabenu};
-        color: ${paleTealLabenu};
+        color: ${darkGrayLabenu};
     }
 `
 
