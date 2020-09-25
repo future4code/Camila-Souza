@@ -5,14 +5,17 @@ import { BASE_URL } from "../../Constants/URLs";
 
 const useInputTask = (initialValue)=>{
     const [taskValue, setTaskValue] = useState(initialValue);
+    const clearInput = ()=>{
+        setTaskValue("")
+    }
     const onChange = (event) =>{
         setTaskValue(event.target.value)
     }
-    return [taskValue, onChange];
+    return [taskValue, onChange, clearInput];
 }
 
 function NewTaskForm(props){
-    const [newTask, setNewTask] = useInputTask("");
+    const [newTask, setNewTask, clearNewTask] = useInputTask("");
     const [newTaskDay, setNewTaskDay] = useInputTask("");
     const onSubmitTask = (event)=>{
         event.preventDefault()
@@ -22,7 +25,8 @@ function NewTaskForm(props){
         }
         axios.post(`${BASE_URL}`, body).then(()=>{
             props.updateTask();
-            // limpar o input após enviar a tarefa;
+            clearNewTask();
+          
         }
         )
         
