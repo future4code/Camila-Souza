@@ -4,37 +4,31 @@ import { SpreadContainer } from "./styled";
 import axios from "axios";
 import { BASE_URL } from "../../Constants/URLs"
 
-function WeeklySpread(){
-    const [tasks, setTasks] = useState([])
-    const getTask = ()=>{
-        axios.get(`${BASE_URL}`).then((response)=>{
-            setTasks(response.data);
-        });
-    }
-
+function WeeklySpread(props){
+  
     useEffect(()=>{
-        getTask();
+        props.getTask();
     }, []);
 
-    const monTasks = tasks.filter((task)=>{
+    const monTasks = props.tasks.filter((task)=>{
         return task.day === "mon"
     });
-    const tueTasks = tasks.filter((task)=>{
+    const tueTasks = props.tasks.filter((task)=>{
         return task.day === "tue"
     });
-    const wedTasks = tasks.filter((task)=>{
+    const wedTasks = props.tasks.filter((task)=>{
         return task.day === "wed"
     });
-    const thuTasks = tasks.filter((task)=>{
+    const thuTasks = props.tasks.filter((task)=>{
         return task.day === "thu"
     });
-    const friTasks = tasks.filter((task)=>{
+    const friTasks = props.tasks.filter((task)=>{
         return task.day === "fri"
     });
-    const satTasks = tasks.filter((task)=>{
+    const satTasks = props.tasks.filter((task)=>{
         return task.day === "sat"
     });
-    const sunTasks = tasks.filter((task)=>{
+    const sunTasks = props.tasks.filter((task)=>{
         return task.day === "sun"
     });
 

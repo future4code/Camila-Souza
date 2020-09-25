@@ -3,7 +3,6 @@ import { NewTaksContainer } from "./styled";
 import axios from "axios";
 import { BASE_URL } from "../../Constants/URLs";
 
-
 const useInputTask = (initialValue)=>{
     const [taskValue, setTaskValue] = useState(initialValue);
     const onChange = (event) =>{
@@ -12,7 +11,7 @@ const useInputTask = (initialValue)=>{
     return [taskValue, onChange];
 }
 
-function NewTaskForm(){
+function NewTaskForm(props){
     const [newTask, setNewTask] = useInputTask("");
     const [newTaskDay, setNewTaskDay] = useInputTask("");
     const onSubmitTask = (event)=>{
@@ -21,9 +20,12 @@ function NewTaskForm(){
             "text": newTask,
 	        "day": newTaskDay,
         }
-        axios.post(`${BASE_URL}`, body).then((response)=>{
-            console.log(response)
-        })
+        axios.post(`${BASE_URL}`, body).then(()=>{
+            props.updateTask();
+            // limpar o input após enviar a tarefa;
+        }
+        )
+        
     }
     return(
         <NewTaksContainer>
