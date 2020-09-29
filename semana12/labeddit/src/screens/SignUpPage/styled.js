@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export const LoginContainer = styled.div`
+export const SignUpContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,7 +9,7 @@ export const LoginContainer = styled.div`
     width: 100vw;
 `
 
-export const LoginFormContainer = styled.div`
+export const SignUpFormContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 80vw;
