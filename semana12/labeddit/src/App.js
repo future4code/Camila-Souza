@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Router from "./routes/Router";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import { MainContainer } from "./AppStyledMainContainer";
 
 const App = () => {
   const token = localStorage.getItem("token")
@@ -10,7 +11,9 @@ const App = () => {
   return (
     <BrowserRouter>
       <Header buttonName={buttonName} setButtonName={setButtonName}/>
-      <Router setButtonName={setButtonName} /> 
+      <MainContainer>
+        <Router setButtonName={setButtonName} />
+      </MainContainer> 
       <Footer />
     </BrowserRouter>
   );

@@ -9,7 +9,7 @@ export const SignUpContainer = styled.div`
     width: 100vw;
 `
 
-export const SignUpFormContainer = styled.div`
+export const SignUpFormContainer = styled.form`
     display: flex;
     flex-direction: column;
     width: 80vw;

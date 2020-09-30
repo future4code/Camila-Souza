@@ -6,7 +6,7 @@ const FeedPage = ()=> {
   useProtectedPage()
   return (
     <FeedContainer>
-        <p>FeedPage</p>
+        {/* <PostCard /> */}
     </FeedContainer>
   );
 }

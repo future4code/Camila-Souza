@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export const ErrorContainer = styled.div`
+export const UnderConstructionContainer = styled.div`
     display: grid;
     background-color: white;
     margin: 10vw;
    
 `
-export const ErrorImage = styled.img`
+export const UnderConstructionImage = styled.img`
     justify-self: center;
     align-self: center;
     max-width: 70vw;

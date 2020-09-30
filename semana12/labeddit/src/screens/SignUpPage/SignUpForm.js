@@ -6,26 +6,25 @@ import { SignUpFormContainer } from "./styled";
 
 const SignUpForm = (props)=>{
     const history = useHistory()
-    const [form, handleInputChange] = useForm({name:"", email:"", password:""})
+    const [form, handleInputChange] = useForm({username:"", email:"", password:""})
 
     const onClickSignUp = (event)=>{
         event.preventDefault()
-        const element = document.getElementById("signup_form")
-        const isValid = element.checkValidity()
-        element.reportValidity()
-        if (isValid) {
+        // const element = document.getElementById("signup_form")
+        // const isValid = element.checkValidity()
+        // element.reportValidity()
+        // if (isValid) {
             signUp(form, history, props.setButtonName)
-        }}
+        // }
+    }
 
     return (
-        <form>
-            <SignUpFormContainer>
-                <input value={form.name} name={"name"} onChange={handleInputChange} placeholder={"Nome"} required autoFocus/>
+            <SignUpFormContainer onSubmit={onClickSignUp}>
+                <input value={form.username} name={"username"} onChange={handleInputChange} placeholder={"Nome"} required autoFocus/>
                 <input value={form.email} name={"email"} onChange={handleInputChange} placeholder={"E-mail"} type={"email"} required />
                 <input value={form.password} name={"password"} onChange = {handleInputChange} placeholder={"Senha"} type={"password"} required />
-                <button onClick={onClickSignUp} type={"submit"}>Login</button>
+                <button>Login</button>
             </SignUpFormContainer>
-        </form>
     )
 }
 

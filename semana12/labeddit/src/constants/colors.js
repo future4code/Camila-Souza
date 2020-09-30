@@ -1,7 +1,7 @@
 export const BackgroundColor = "#e3e5e2"; /*paleTealLabenu*/
-export const yellowLabenu = "#fbb44c";
+export const SecondaryColorMedium = "#fbb44c"; /*yellowLabenu*/
 export const SecondaryColor = "#fad69b"; /*lightYellowLabenu*/
-export const orangeLabenu = "#F27D1E";
+export const PrimaryColorMedium = "#F27D1E"; /*orangeLabenu*/
 export const PrimaryColor = "#bd6413"; /*darkOrangeLabenu*/
 export const brownLabenu = "#725D4B";
 export const lightBrownLabenu = "#b4844c";

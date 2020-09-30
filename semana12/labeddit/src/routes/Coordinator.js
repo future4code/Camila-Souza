@@ -10,3 +10,6 @@ export const goToAddPost = (history)=>{
 export const goToPostsFeed = (history)=>{
     history.push("/feed")
 }
+export const goToUnderConstructionPage = (history)=>{
+    history.push("/underconstruction")
+}

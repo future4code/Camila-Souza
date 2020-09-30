@@ -4,7 +4,8 @@ import LoginPage from "../screens/LoginPage/LoginPage";
 import SignUpPage from "../screens/SignUpPage/SignUpPage";
 import PostPage from "../screens/PostPage/PostPage";
 import FeedPage from "../screens/FeedPage/FeedPage";
-import ErrorPage from "../screens/ErrorPage/ErroPage";
+import ErrorPage from "../screens/ErrorPage/ErrorPage";
+import UnderConstructionPage from "../screens/UnderConstructionPage/UnderConstructionPage";
 
 const Router = (props)=>{
     return(
@@ -20,6 +21,9 @@ const Router = (props)=>{
             </Route>
             <Route exact path={"/feed"}>
                 <FeedPage />
+            </Route>
+            <Route exact path={"/underconstruction"}>
+                <UnderConstructionPage />
             </Route>
             <Route>
                 <ErrorPage />

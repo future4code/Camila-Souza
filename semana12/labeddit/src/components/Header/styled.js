@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { PrimaryColor, SecondaryColor } from "../../constants/colors";
+import { PrimaryColor, SecondaryColor, PrimaryColorMedium } from "../../constants/colors";
 
 export const HeaderContainer = styled.div`
     display: flex;
@@ -7,7 +7,20 @@ export const HeaderContainer = styled.div`
     justify-content: space-between;
     background-color: ${PrimaryColor};
     color: ${SecondaryColor};
-    height: 2vh;
     padding-left: 2vw;
     padding-right: 2vw;
+`
+export const HeaderButtons = styled.button`
+    background-color: ${PrimaryColor};
+    color: ${SecondaryColor};
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5em;
+    padding: 0.1em 0.5em;
+    margin: 0.2em;
+    :hover{
+        background-color: ${PrimaryColorMedium};
+        cursor: pointer; 
+    }
+    
 `
