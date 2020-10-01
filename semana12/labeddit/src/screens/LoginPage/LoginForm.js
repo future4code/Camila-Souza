@@ -19,13 +19,11 @@ const LoginForm = (props)=>{
     }
 
     return(
-        <form>
-            <LoginFormContainer>
-                <input value={form.email} name={"email"} onChange={handleInputChange} placeholder={"E-mail"} type={"email"} required autoFocus />
-                <input value={form.password} name={"password"} onChange = {handleInputChange} placeholder={"Senha"} type={"password"} required />
-                <LoginButton onClick={onClickLogin} type={"submit"}>Fazer Login</LoginButton>
-            </LoginFormContainer>
-        </form>
+        <LoginFormContainer onSubmit={onClickLogin}>
+            <input value={form.email} name={"email"} onChange={handleInputChange} placeholder={"E-mail"} type={"email"} required autoFocus />
+            <input value={form.password} name={"password"} onChange = {handleInputChange} placeholder={"Senha"} type={"password"} required />
+            <LoginButton>Fazer Login</LoginButton>
+        </LoginFormContainer>
     )
 }
 

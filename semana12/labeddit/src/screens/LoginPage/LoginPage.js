@@ -1,6 +1,6 @@
-import React/*, { useState }*/ from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { LoginContainer, LogoLogin } from './styled';
+import { LoginContainer, LogoLogin, SignUpButton } from './styled';
 import useUnprotectedPage from "../../hooks/useUnprotectedPage";
 import LoginForm from './LoginForm';
 import { goToSignUp } from '../../routes/Coordinator';
@@ -13,7 +13,7 @@ const LoginPage = (props) => {
     <LoginContainer>
       <LogoLogin src={logoLabEddit} />
       <LoginForm setButtonName={props.setButtonName} />
-      <button onClick={()=>goToSignUp(history)} type={"submit"} variant={"text"}>Não tem cadastro?! Cliquei aqui!</button>
+      <SignUpButton onClick={()=>goToSignUp(history)} type={"submit"} variant={"text"}>Não tem cadastro?! Clique aqui!</SignUpButton>
     </LoginContainer>
   )
   }

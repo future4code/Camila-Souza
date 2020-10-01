@@ -4,7 +4,7 @@ export const goToLogin = (history)=>{
 export const goToSignUp = (history)=>{
     history.push("/cadastro")
 }
-export const goToAddPost = (history)=>{
+export const goToPostPage = (history)=>{
     history.push("/post")
 }
 export const goToPostsFeed = (history)=>{

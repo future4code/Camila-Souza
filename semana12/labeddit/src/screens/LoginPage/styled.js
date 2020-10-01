@@ -1,6 +1,5 @@
-import React from "react";
 import styled from "styled-components";
-import { PrimaryColor, SecondaryColor, PrimaryColorMedium } from "../../constants/colors";
+import { PrimaryColor, SecondaryColor, PrimaryColorMedium, BackgroundColor } from "../../constants/colors";
 
 export const LoginContainer = styled.div`
     display: flex;
@@ -10,7 +9,7 @@ export const LoginContainer = styled.div`
     width: 100vw;
 `
 
-export const LoginFormContainer = styled.div`
+export const LoginFormContainer = styled.form`
     display: flex;
     flex-direction: column;
     width: 90vw;
@@ -38,4 +37,17 @@ export const LoginButton = styled.button`
         background-color: ${PrimaryColorMedium};
         cursor: pointer; 
     }
+`
+export const SignUpButton = styled.button`
+    background-color: white;
+    color: ${PrimaryColor};
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    font-variant-caps: all-small-caps;
+    padding: 0.2em 1em;
+    :hover{
+        background-color: ${BackgroundColor};
+        cursor: pointer; 
 `
