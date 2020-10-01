@@ -13,10 +13,10 @@ const FeedPage = ()=> {
   const posts = useRequestData([], '/posts')
   
   const renderPosts = ()=>{
-    posts.map((item)=>{
+    return posts.map((item)=>{
     return (
-        <PostCard text= {item.text} title={item.title} key={item.postid} onClick={()=> goToPostsFeed(history, item.postid)}/>
-      );
+      <PostCard createdAt={item.createdAt} username={item.username} text= {item.text} title={item.title} key={item.postid} onClick={()=> goToPostsFeed(history, item.postid)}/>
+    );
     })}
   return (
     <FeedContainer>

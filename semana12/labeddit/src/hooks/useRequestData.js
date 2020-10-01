@@ -14,7 +14,7 @@ const useRequestData = (initialData, endpoint) => {
         }
         )
         .then((response)=>{
-            setData(response.data)
+            setData(response.data.posts)
         })
         .catch((error)=>{
             console.log(error)
