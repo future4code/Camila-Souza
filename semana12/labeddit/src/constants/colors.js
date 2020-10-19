@@ -1,0 +1,11 @@
+export const BackgroundColor = "#e3e5e2"; /*paleTealLabenu*/
+export const SecondaryColorMedium = "#fbb44c"; /*yellowLabenu*/
+export const SecondaryColor = "#fad69b"; /*lightYellowLabenu*/
+export const PrimaryColorMedium = "#F27D1E"; /*orangeLabenu*/
+export const PrimaryColor = "#bd6413"; /*darkOrangeLabenu*/
+export const PostContainerBorder = "#725D4B"; /*brownLabenu*/
+export const lightBrownLabenu = "#b4844c";
+export const lightGrayLabenu = "#AAB8C6";
+export const MainPostFontColor = "#45525b"; /*darkGrayLabenu*/
+export const mediumGrayLabenu = "#757c82";
+export const BackgroundColorMedium = "#9cacac"; /*lightTealLabenu*/
