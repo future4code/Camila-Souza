@@ -1,0 +1,26 @@
+{
+  "name": "s14a03",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "tsc && node build/index.js",
+    "dev": "ts-node-dev src/index.ts"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Camila Souza",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.8",
+    "@types/express": "^4.17.8",
+    "ts-node-dev": "^1.0.0",
+    "typescript": "^4.0.3"
+  }
+}
