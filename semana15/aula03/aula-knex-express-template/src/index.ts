@@ -2,6 +2,9 @@ import knex from "knex";
 import express, { Request, Response } from "express";
 import dotenv from "dotenv";
 import { AddressInfo } from "net";
+import { getAllActors } from "./data/getAllActors";
+import { getActorByName } from "./endpoints/getActorByName";
+import { getActorsCountByGender } from "./endpoints/getActorsCountByGender";
 
 /**************************************************************/
 
@@ -9,7 +12,7 @@ dotenv.config();
 
 /**************************************************************/
 
-const connection = knex({   
+export const connection = knex({   
   client: "mysql",
   connection: {
     host: process.env.DB_HOST,
@@ -37,16 +40,9 @@ const server = app.listen(process.env.PORT || 3003, () => {
 
 /**************************************************************/
 
-app.get('/', testEndpoint)
+app.get('/', getAllActors);
 
-async function testEndpoint(req:Request, res:Response): Promise<void>{
-  try {
-    const result = await connection.raw(`
-      SELECT * FROM Actor
-    `)
+app.get("/search/:name", getActorByName);
 
-    res.status(200).send(result)
-  } catch (error) {
-    res.status(400).send(error.message)
-  }
-}
+app.get("/gender/:gender", getActorsCountByGender)
+
