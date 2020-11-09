@@ -1,8 +1,6 @@
 import * as jwt from "jsonwebtoken";
+import { AuthenticationData } from "../constants/types";
 
-export type AuthenticationData = {
-    id: string
-};
 
 const expiresIn = "10min";
 

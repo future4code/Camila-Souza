@@ -35,3 +35,8 @@ password VARCHAR(64) NOT NULL
 
 ##### Código
 ***
+
+### Exercício 07
+
+##### Código
+***
