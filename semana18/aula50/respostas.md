@@ -23,14 +23,12 @@ password VARCHAR(64) NOT NULL
 
 ### Exercício 04
 
-##### a.
-##### b.
+##### Código
 ***
 
 ### Exercício 05
 
-##### a.
-##### b.
+##### Código
 ***
 
 ### Exercício 06

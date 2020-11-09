@@ -1,7 +1,7 @@
-import { createUser } from './../constants/createUser';
 import { Request, Response } from "express";
 import generateId from "../services/generateId";
 import { generateToken } from '../services/authenticator';
+import insertUser from "../data/insertUser"
 
 export default async function postUser(
     req: Request,
@@ -22,7 +22,7 @@ export default async function postUser(
 
         const id = generateId()
 
-        await createUser(
+        await insertUser(
             id,
             userData.email,
             userData.password

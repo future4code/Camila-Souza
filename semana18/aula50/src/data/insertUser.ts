@@ -1,12 +1,12 @@
-import { connection } from './connection';
+import { userTableName } from '../constants/userTableName';
+import { connection } from '../constants/connection';
 
-const userTableName = "week18_users";
 
-export const createUser = async (
+export default async function insertUser(
     id: string,
     email: string,
     password: string
-) => {
+){
     await connection
         .insert({
             id,
