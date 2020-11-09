@@ -2,7 +2,7 @@
 
 ### Exercício 01
 
-##### a. Acho uma boa ideia, pois permite um número maior de variáveis;
+##### a. Acho uma boa ideia, pois permite um número maior de variáveis.
 ***
 
 ### Exercício 02
@@ -18,8 +18,7 @@ password VARCHAR(64) NOT NULL
 
 ### Exercício 03
 
-##### a.
-##### b.
+##### a. Transforma os dados em string. Serve para tipificar o dado no tipo designado para o token;
 ***
 
 ### Exercício 04
