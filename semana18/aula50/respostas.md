@@ -38,5 +38,11 @@ password VARCHAR(64) NOT NULL
 
 ### Exercício 07
 
+##### a. Permite que a informação seja aceita com qualquer tipagem.
+##### Código
+***
+
+### Exercício 08
+
 ##### Código
 ***

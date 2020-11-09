@@ -25,3 +25,12 @@ UNIQUE, password VARCHAR(64) NOT NULL );<br>
     - password (obrigatório)
 - Resposta (output): <br>
     - token (gerado pelo jwt) <br>
+
+##### Selecionar Usuário
+- Método: GET <br>
+- Path: "/user/profile" <br>
+- Body (input): <br>
+    - Authorization: token do usuário
+- Resposta (output): <br>
+    - id: id do usuário <br>
+    - email: email do usuário <br>
