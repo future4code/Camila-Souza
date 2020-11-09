@@ -2,7 +2,7 @@ import { userTableName } from '../constants/userTableName';
 import { connection } from '../constants/connection';
 import { User } from "../constants/types";
 
-export default async function getUserByEmail(
+export default async function selectUserByEmail(
     email: string
 ) : Promise<User> {
     try {

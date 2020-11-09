@@ -2,7 +2,8 @@ import express, { Express } from 'express';
 import cors from 'cors';
 import { Server } from 'http';
 import { AddressInfo } from "net";
-import postUser from './endpoints/postUser';
+import postUserSignUp from './endpoints/postUserSignUp';
+import postUserLogin from './endpoints/postUserLogin';
 
 const app: Express = express()
 app.use(express.json())
@@ -10,8 +11,8 @@ app.use(cors())
 
 //----------
 
-app.post("/signup", postUser)
-
+app.post("/signup", postUserSignUp)
+app.post("/login", postUserLogin)
 //----------
 const server: Server = app.listen(process.env.PORT || 3003, () => {
     if (server) {

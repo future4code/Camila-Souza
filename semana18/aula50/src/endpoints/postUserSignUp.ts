@@ -3,7 +3,7 @@ import generateId from "../services/generateId";
 import { generateToken } from '../services/authenticator';
 import insertUser from "../data/insertUser"
 
-export default async function postUser(
+export default async function postUserSignUp(
     req: Request,
     res: Response
 ) {
