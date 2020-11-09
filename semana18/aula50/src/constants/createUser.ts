@@ -2,7 +2,7 @@ import { connection } from './connection';
 
 const userTableName = "week18_users";
 
-const createUser = async (
+export const createUser = async (
     id: string,
     email: string,
     password: string
