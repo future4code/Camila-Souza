@@ -14,14 +14,14 @@ export default async function deletUserById(
 
     if (auth.role !== "admin") {
        res.statusCode = 401
-       throw new Error("Unalthorized")
+       throw new Error("Unauthorized")
     }
 
     const id = req.params.id;
 
     const user = await deleteUser(id)
 
-      res.status(200).send()
+    res.statusMessage = "User deleted"
 
    } catch (error) {
       res.status(400).send({

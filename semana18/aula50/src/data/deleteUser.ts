@@ -7,6 +7,6 @@ export default async function deleteUser(
 ): Promise<any>{
     await connection
         .delete()
-        .from({userTableName})
+        .from(`${userTableName}`)
         .where({ id });
 };

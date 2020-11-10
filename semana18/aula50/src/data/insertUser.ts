@@ -4,6 +4,8 @@ import { connection } from '../constants/connection';
 
 export default async function insertUser(
     id: string,
+    name: string,
+    nickname: string,
     email: string,
     password: string,
     role: USER_ROLES
@@ -11,11 +13,13 @@ export default async function insertUser(
     await connection
         .insert({
             id,
+            name,
+            nickname,
             email,
             password,
             role
         })
-        .into({userTableName});
+        .into(`${userTableName}`);
 };
 
 export enum USER_ROLES {

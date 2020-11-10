@@ -18,6 +18,8 @@ export default async function postUserSignUp(
         }
 
         const userData = {
+            name: req.body.name,
+            nickname: req.body.nickname,
             email: req.body.email,
             password: req.body.password,
             role: req.body.role
@@ -29,6 +31,8 @@ export default async function postUserSignUp(
 
         await insertUser(
             id,
+            userData.name,
+            userData.nickname,
             userData.email,
             cypherPassword,
             userData.role
