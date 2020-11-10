@@ -2,6 +2,8 @@ import { Request, Response } from "express";
 import generateId from "../services/generateId";
 import { generateToken } from '../services/authenticator';
 import insertUser from "../data/insertUser"
+import { generateHash } from "../services/hashManager";
+
 
 export default async function postUserSignUp(
     req: Request,
@@ -17,25 +19,30 @@ export default async function postUserSignUp(
 
         const userData = {
             email: req.body.email,
-            password: req.body.password
+            password: req.body.password,
+            role: req.body.role
         }
 
         const id = generateId()
 
+        const cypherPassword = await generateHash(userData.password)
+
         await insertUser(
             id,
             userData.email,
-            userData.password
+            cypherPassword,
+            userData.role
         )
 
         const token = generateToken({
-            id
+            id,
+            role: userData.role
         })
 
         res
         .status(200)
         .send({
-            message: "Usuário criado com sucesso",
+            message: "User successfuly created",
             token
         })
 
