@@ -19,6 +19,6 @@ export default async function insertUser(
 };
 
 export enum USER_ROLES {
-    NORMAL,
-    ADMIN,
+    normal,
+    admin,
 }

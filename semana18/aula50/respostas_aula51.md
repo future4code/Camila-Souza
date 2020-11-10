@@ -10,5 +10,10 @@
 
 ##### a. O Cadastro. Por sequenciamento, afinal, primeiro precisa haver um cadastro para que se possa fazer login;
 ##### b. e c. Código;
-##### d. Sim, precisamos adicionar o parâmetro role para inserção na tabela
+##### d. Não. A parte ligada à criptografia é feita no endpoint.
+***
+
+### Exercício 03
+
+##### a., b., c. e d. Código
 ***

@@ -1,7 +1,6 @@
-import { USER_ROLES } from './../data/insertUser';
 export type AuthenticationData = {
     id: string,
-    role: USER_ROLES
+    role: string
 };
 
 export type User = {
@@ -10,5 +9,5 @@ export type User = {
     nickname: string,
     email: string,
     password: string,
-    role: USER_ROLES
+    role: string
 };
