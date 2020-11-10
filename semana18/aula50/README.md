@@ -34,3 +34,8 @@ UNIQUE, password VARCHAR(64) NOT NULL );<br>
 - Resposta (output): <br>
     - id: id do usuário <br>
     - email: email do usuário <br>
+
+##### Deletar Usuário
+- Método: DELET <br>
+- Path: "/user/:id" <br>
+- Somente admins podem acessar esse endpoint

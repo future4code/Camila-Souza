@@ -15,7 +15,7 @@ export default async function insertUser(
             password,
             role
         })
-        .into(userTableName);
+        .into({userTableName});
 };
 
 export enum USER_ROLES {
