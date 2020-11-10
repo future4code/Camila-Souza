@@ -17,7 +17,9 @@ export default async function deletUserById(
        throw new Error("Unalthorized")
     }
 
-    const user = await deleteUser(auth.id)
+    const id = req.params.id;
+
+    const user = await deleteUser(id)
 
       res.status(200).send()
 

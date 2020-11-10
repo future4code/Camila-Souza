@@ -5,6 +5,7 @@ import { AddressInfo } from "net";
 import postUserSignUp from './endpoints/postUserSignUp';
 import postUserLogin from './endpoints/postUserLogin';
 import getUserById from './endpoints/getUserById';
+import deletUserById from './endpoints/deleteUserById';
 
 const app: Express = express()
 app.use(express.json())
@@ -14,7 +15,8 @@ app.use(cors())
 
 app.post("/signup", postUserSignUp)
 app.post("/login", postUserLogin)
-app.get("/user/profile", getUserById)
+app.get("/user/:id", getUserById)
+app.delete("/user/:id", deletUserById)
 //----------
 const server: Server = app.listen(process.env.PORT || 3003, () => {
     if (server) {

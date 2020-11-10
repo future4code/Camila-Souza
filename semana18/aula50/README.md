@@ -28,7 +28,7 @@ UNIQUE, password VARCHAR(64) NOT NULL );<br>
 
 ##### Selecionar Usuário
 - Método: GET <br>
-- Path: "/user/profile" <br>
+- Path: "/user/:id" <br>
 - Body (input): <br>
     - Authorization: token do usuário
 - Resposta (output): <br>

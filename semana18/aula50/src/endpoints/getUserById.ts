@@ -12,15 +12,17 @@ export default async function getUserById(
 
     const auth = getTokenData(token);
 
-    if (auth.role !== "normal") {
+    if (!auth) {
        res.statusCode = 401
-       throw new Error("Unalthorized")
+       throw new Error("Session expired")
     }
 
-    const user = await selectUserById(auth.id)
+    const id = req.params.id;
+
+    const user = await selectUserById(id)
 
       if (!user) {
-         throw new Error("Usuário não encontrado")
+         throw new Error("User not found")
       }
 
       res.status(200).send({
