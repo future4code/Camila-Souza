@@ -12,6 +12,11 @@ export default async function getUserById(
 
     const auth = getTokenData(token);
 
+    if (auth.role !== "normal") {
+       res.statusCode = 401
+       throw new Error("Unalthorized")
+    }
+
     const user = await selectUserById(auth.id)
 
       if (!user) {
@@ -20,7 +25,8 @@ export default async function getUserById(
 
       res.status(200).send({
          id: user.id,
-         email: user.email
+         email: user.email,
+         role: auth.role
       })
 
    } catch (error) {

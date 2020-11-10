@@ -17,3 +17,8 @@
 
 ##### a., b., c. e d. Código
 ***
+
+### Exercício 04
+
+##### a. Código
+***
