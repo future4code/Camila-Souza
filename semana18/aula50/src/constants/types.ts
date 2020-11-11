@@ -18,6 +18,7 @@ export type AddressData = {
     numero: string,
     complemento: string,
     bairro: string,
+    cpf: number,
     cidade: string,
     estado: string
 };

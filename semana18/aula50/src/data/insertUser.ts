@@ -13,6 +13,7 @@ export default async function insertUser(
     numero: string,
     complemento: string,
     bairro: string,
+    cpf: number,
     cidade: string,
     estado: string
 ){
@@ -34,6 +35,7 @@ export default async function insertUser(
             numero,
             complemento,
             bairro,
+            cpf,
             cidade,
             estado
         })

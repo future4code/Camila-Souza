@@ -27,6 +27,7 @@ export default async function postUserSignUp(
             numero: req.body.numero,
             complemento: req.body.complemento,
             bairro: req.body.bairro,
+            cpf: req.body.cpf,
             cidade: req.body.cidade,
             estado: req.body.estado
         }
@@ -49,6 +50,7 @@ export default async function postUserSignUp(
             userData.numero,
             userData.complemento,
             userData.bairro,
+            userData.cpf,
             userData.cidade,
             userData.estado
         )
