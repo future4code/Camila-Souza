@@ -1,5 +1,4 @@
 import { urlAddress } from './../constants/urlAddress';
-import Axios from "axios";
 import { AddressData } from "../constants/types";
 import axios from "axios";
 

@@ -5,6 +5,16 @@ id VARCHAR(255) PRIMARY KEY NOT NULL <br>
 UNIQUE, email VARCHAR(64) NOT NULL <br>
 UNIQUE, password VARCHAR(64) NOT NULL );<br>
 
+CREATE TABLE to_do_list_user_address ( <br>
+id INT(64) PRIMARY KEY UNIQUE AUTO_INCREMENT, <br>
+logradouro VARCHAR(255) NOT NULL, <br>
+número VARCHAR(12) NOT NULL, <br>
+complemento VARCHAR(255), <br>
+bairro VARCHAR(64) NOT NULL, <br>
+cidade VARCHAR(64) NOT NULL, <br>
+estado VARCHAR(64) NOT NULL <br>
+); <br>
+
 ***
 ### Endpoints
 
