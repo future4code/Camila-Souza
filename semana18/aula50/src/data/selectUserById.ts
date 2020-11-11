@@ -6,7 +6,7 @@ export default async function selectUserById(
     id: string
 ) : Promise<User> {
     try {
-        const result = await connection({userTableName})
+        const result = await connection(`${userTableName}`)
         .select("*")
         .where({ id })
 

@@ -1,1 +1,1 @@
-export const userTableName = "week18_users";
+export const userTableName = "to_do_list_users";

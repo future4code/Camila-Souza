@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import selectUserById from "../data/selectUserById";
+import deleteUser from "../data/deleteUser";
 import { getTokenData } from "../services/authenticator";
 
-export default async function getUserById(
+export default async function deletUserById(
    req: Request,
    res: Response
 ) {
@@ -12,24 +12,16 @@ export default async function getUserById(
 
     const auth = getTokenData(token);
 
-    if (!auth) {
+    if (auth.role !== "admin") {
        res.statusCode = 401
-       throw new Error("Session expired")
+       throw new Error("Unauthorized")
     }
 
     const id = req.params.id;
 
-    const user = await selectUserById(id)
+    const user = await deleteUser(id)
 
-      if (!user) {
-         throw new Error("User not found")
-      }
-
-      res.status(200).send({
-         id: user.id,
-         email: user.email,
-         role: auth.role
-      })
+    res.statusMessage = "User deleted"
 
    } catch (error) {
       res.status(400).send({
