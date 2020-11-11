@@ -20,4 +20,11 @@ export type AddressData = {
     bairro: string,
     cidade: string,
     estado: string
+};
+
+export type AddressByCEP = {
+    logradouro: string,
+    bairro: string,
+    cidade: string,
+    estado: string
 }

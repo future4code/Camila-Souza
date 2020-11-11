@@ -1,10 +1,10 @@
 import { urlAddress } from './../constants/urlAddress';
-import { AddressData } from "../constants/types";
+import { AddressByCEP } from "../constants/types";
 import axios from "axios";
 
 export async function getAddressFromCEP(
     cep: number
-    ): Promise<AddressData> {
+    ): Promise<AddressByCEP> {
     
         const getAddress = await axios.get(`${urlAddress}/${cep}/json`)
 
@@ -12,6 +12,6 @@ export async function getAddressFromCEP(
             logradouro: getAddress.data.logradouro,
             bairro: getAddress.data.bairro,
             cidade: getAddress.data.cidade,
-            estado: getAddress.data.cidade
+            estado: getAddress.data.estado
         }
 }
