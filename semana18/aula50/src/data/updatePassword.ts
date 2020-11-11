@@ -8,6 +8,6 @@ export async function updatePassword(
     await connection.raw(`
         UPDATE '${userTableName}'
         SET password = '${newPassword}'
-        WHERE id = ({ id });
+        WHERE id = "${id};
     `)
 }
