@@ -22,10 +22,18 @@ export default async function postUserSignUp(
             nickname: req.body.nickname,
             email: req.body.email,
             password: req.body.password,
-            role: req.body.role
+            role: req.body.role,
+            logradouro: req.body.logradouro,
+            numero: req.body.numero,
+            complemento: req.body.complemento,
+            bairro: req.body.bairro,
+            cidade: req.body.cidade,
+            estado: req.body.estado
         }
 
         const id = generateId()
+
+        const user_id = id
 
         const cypherPassword = await generateHash(userData.password)
 
@@ -35,7 +43,14 @@ export default async function postUserSignUp(
             userData.nickname,
             userData.email,
             cypherPassword,
-            userData.role
+            userData.role,
+            user_id,
+            userData.logradouro,
+            userData.numero,
+            userData.complemento,
+            userData.bairro,
+            userData.cidade,
+            userData.estado
         )
 
         const token = generateToken({

@@ -1,4 +1,4 @@
-import { userTableName } from '../constants/userTableName';
+import { userTableName } from '../constants/userTables';
 import { connection } from '../constants/connection';
 import { User } from "../constants/types";
 

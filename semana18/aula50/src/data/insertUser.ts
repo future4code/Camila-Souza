@@ -1,6 +1,5 @@
-import { userTableName } from '../constants/userTableName';
+import { userTableAddress, userTableName } from '../constants/userTables';
 import { connection } from '../constants/connection';
-
 
 export default async function insertUser(
     id: string,
@@ -8,7 +7,14 @@ export default async function insertUser(
     nickname: string,
     email: string,
     password: string,
-    role: USER_ROLES
+    role: USER_ROLES,
+    user_id: string,
+    logradouro: string,
+    numero: string,
+    complemento: string,
+    bairro: string,
+    cidade: string,
+    estado: string
 ){
     await connection
         .insert({
@@ -20,6 +26,18 @@ export default async function insertUser(
             role
         })
         .into(`${userTableName}`);
+
+        await connection
+        .insert({
+            user_id,
+            logradouro,
+            numero,
+            complemento,
+            bairro,
+            cidade,
+            estado
+        })
+        .into(`${userTableAddress}`);
 };
 
 export enum USER_ROLES {
