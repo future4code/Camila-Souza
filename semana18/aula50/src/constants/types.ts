@@ -11,3 +11,10 @@ export type User = {
     password: string,
     role: string
 };
+
+export type AddressData = {
+    logradouro: string,
+    bairro: string,
+    cidade: string,
+    estado: string
+}
