@@ -1,4 +1,4 @@
-import { userTableName } from './../constants/userTableName';
+import { userTableName } from '../constants/userTables';
 import { connection } from './../constants/connection';
 
 export async function updatePassword(
