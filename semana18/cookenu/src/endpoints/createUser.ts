@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { stringify } from "querystring";
 import insertUser from "../data/insertUser";
 import { generateToken } from "../services/authenticator";
 import generateId from "../services/generateId";
