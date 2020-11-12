@@ -26,17 +26,19 @@ CREATE TABLE cookenu_users ( <br>
     password VARCHAR(255) NOT NULL <br>
 ); <br>
 CREATE TABLE cookenu_recipes ( <br>
-    id VARCHAR(255) PRIMARY KEY NOT NULL, <br>
+    id VARCHAR(255) PRIMARY KEY, <br>
+    user_id VARCHAR(255) NOT NULL,<br>
     title VARCHAR(64) NOT NULL, <br>
-    description TEXT NOT NULL<br>
-    created_at DATE NOT NULL <br>
+    description TEXT NOT NULL,<br>
+    created_at DATE NOT NULL, <br>
+    FOREIGN KEY(followed_id) REFERENCES cookenu_users(id)<br>
 ); <br>
 CREATE TABLE cookenu_followers ( <br>
-    user_id VARCHAR(255) NOT NULL, <br>
-    following VARCHAR(64) NOT NULL, <br>
-    PRIMARY KEY(user_id, following), <br>
-    FOREIGN KEY(user_id) REFERENCES cookenu_users(id),<br>
-    FOREIGN KEY(following) REFERENCES cookenu_users(id)<br>
+    followed_id VARCHAR(255), <br>
+    following_id VARCHAR(255), <br>
+    PRIMARY KEY(followed_id, following_id), <br>
+    FOREIGN KEY(followed_id) REFERENCES cookenu_users(id),<br>
+    FOREIGN KEY(following_id) REFERENCES cookenu_users(id)<br>
 ); <br>
 
 ***

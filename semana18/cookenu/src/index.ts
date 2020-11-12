@@ -5,6 +5,7 @@ import { AddressInfo } from "net";
 import createUser from './endpoints/createUser';
 import login from './endpoints/login';
 import getUserById from './endpoints/getUserById';
+import getUserProfile from './endpoints/getUserProfile';
 
 const app: Express = express()
 app.use(express.json())
@@ -12,6 +13,7 @@ app.use(cors())
 
 app.post("/signup", createUser)
 app.post("/login", login)
+app.get("/user/profile", getUserProfile)
 app.get("/user/:id", getUserById)
 
 const server: Server = app.listen(process.env.PORT || 3003, () => {

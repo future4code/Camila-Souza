@@ -4,37 +4,31 @@ import selectUserById from "../data/selectUserById";
 import { getTokenData } from "../services/authenticator";
 
 
-export default async function getUserById(
+export default async function getUserProfile(
     req:Request,
     res:Response
     ){
     const token = req.headers.authorization as string
     const auth = getTokenData(token)
 
-    let message = "User found"
+    let message = "Profile found"
 
     try {
-        const id: string = req.params.id
-        const user: User = await selectUserById(id)
-
         if(!auth){
             res.statusCode = 401
-            message = "Session expired"
+            message = "Unauthorized"
             throw new Error(message)
         }
-        if(!user){
-            res.statusCode = 406
-            message = "User not found"
-            throw new Error(message)
-        }
+        
+        const { id, name, email }: User = await selectUserById(auth.id)
 
         res
         .status(200)
         .send({
             message,
-            id: user.id,
-            name: user.name,
-            email: user.email
+            id,
+            name,
+            email
         })
     } catch (error) {
         
