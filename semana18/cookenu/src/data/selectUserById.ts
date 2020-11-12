@@ -1,3 +1,4 @@
+import { Recipe } from './../types/recipe';
 import { tableUsers } from './../constants/tables';
 import { connection } from './../constants/connection';
 import { User } from "../types/user";

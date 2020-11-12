@@ -7,6 +7,7 @@ import login from './endpoints/login';
 import getUserById from './endpoints/getUserById';
 import getUserProfile from './endpoints/getUserProfile';
 import createRecipe from './endpoints/createRecipe';
+import getRecipeById from './endpoints/getRecipeById';
 
 const app: Express = express()
 app.use(express.json())
@@ -19,6 +20,7 @@ app.get("/user/profile", getUserProfile)
 app.get("/user/:id", getUserById)
 
 app.post("/recipe", createRecipe)
+app.get("/recipe/:id", getRecipeById)
 
 const server: Server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
