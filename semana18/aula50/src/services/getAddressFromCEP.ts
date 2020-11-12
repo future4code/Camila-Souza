@@ -11,7 +11,7 @@ export async function getAddressFromCEP(
         return {
             logradouro: getAddress.data.logradouro,
             bairro: getAddress.data.bairro,
-            cidade: getAddress.data.cidade,
-            estado: getAddress.data.estado
+            cidade: getAddress.data.localidade,
+            estado: getAddress.data.uf
         }
 }
