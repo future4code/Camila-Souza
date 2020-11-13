@@ -1,3 +1,4 @@
+import { USER_ROLES } from './../types/user';
 import { Request, Response } from "express";
 import { getTokenData } from "../services/authenticator";
 import deleteRecipeById from '../data/deleteRecipeById';
@@ -20,6 +21,10 @@ export default async function deleteRecipe(
             message = "Session expired"
             throw new Error(message)
         }
+        if(auth.role !== 'admin' && !auth.id) {
+            res.statusCode = 401
+            throw new Error ('Unauthorized')
+         }
         if(!id){
             res.statusCode = 406
             message = "Recipe not found"

@@ -5,14 +5,15 @@ import { User } from "../types/user";
 export default async function insertUser(
     user: User
     ): Promise<void> {
-    const { id, name, email, password } = user
+    const { id, name, email, password, role } = user
 
     await connection
         .insert({
             id,
             name,
             email,
-            password
+            password,
+            role
         })
         .into(tableUsers);
 };

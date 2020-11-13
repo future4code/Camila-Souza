@@ -40,6 +40,8 @@ CREATE TABLE cookenu_follow ( <br>
     FOREIGN KEY(followee_id) REFERENCES cookenu_users(id),<br>
     FOREIGN KEY(following_id) REFERENCES cookenu_users(id)<br>
 ); <br>
+ALTER TABLE cookenu_users <br>
+ADD role ENUM("normal", "admin") DEFAULT "normal"; <br>
 
 ***
 ## ENDPOINTS

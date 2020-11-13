@@ -31,7 +31,8 @@ export default async function login(
         }
 
         const token = generateToken({
-            id: user.id
+            id: user.id,
+            role: user.role
         })
 
         res

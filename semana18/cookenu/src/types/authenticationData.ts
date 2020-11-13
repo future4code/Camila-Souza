@@ -1,3 +1,5 @@
+import { USER_ROLES } from './user';
 export type AuthenticationData = {
-    id: string
+    id: string,
+    role: USER_ROLES
 };

@@ -9,7 +9,7 @@ export default async function createUser(
     req: Request,
     res: Response
     ) {
-    const { name, email, password }: User = req.body
+    const { name, email, password, role }: User = req.body
     let message = "User created"
 
     try {
@@ -35,11 +35,13 @@ export default async function createUser(
             id,
             name,
             email,
-            password: cypherPassword
+            password: cypherPassword,
+            role
     })
 
         const token: string = generateToken({
-            id
+            id,
+            role
         })
 
         res
