@@ -10,6 +10,7 @@ import createRecipe from './endpoints/createRecipe';
 import getRecipeById from './endpoints/getRecipeById';
 import { resetPassword } from './endpoints/resetPassword';
 import followUser from './endpoints/followUser';
+import unfollowUser from './endpoints/unfollowUser';
 
 const app: Express = express()
 app.use(express.json())
@@ -19,6 +20,7 @@ app.post("/signup", createUser)
 app.post("/login", login)
 app.post("/user/password/reset", resetPassword)
 app.post("/user/follow", followUser)
+app.post("/user/unfollow", unfollowUser)
 
 app.get("/user/profile", getUserProfile)
 app.get("/user/:id", getUserById)

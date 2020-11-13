@@ -31,13 +31,13 @@ CREATE TABLE cookenu_recipes ( <br>
     title VARCHAR(64) NOT NULL, <br>
     description TEXT NOT NULL,<br>
     created_at DATE NOT NULL, <br>
-    FOREIGN KEY(followed_id) REFERENCES cookenu_users(id)<br>
+    FOREIGN KEY(user_id) REFERENCES cookenu_users(id)<br>
 ); <br>
-CREATE TABLE cookenu_followers ( <br>
-    followed_id VARCHAR(255), <br>
+CREATE TABLE cookenu_follow ( <br>
+    followee_id VARCHAR(255), <br>
     following_id VARCHAR(255), <br>
-    PRIMARY KEY(followed_id, following_id), <br>
-    FOREIGN KEY(followed_id) REFERENCES cookenu_users(id),<br>
+    PRIMARY KEY(followee_id, following_id), <br>
+    FOREIGN KEY(followee_id) REFERENCES cookenu_users(id),<br>
     FOREIGN KEY(following_id) REFERENCES cookenu_users(id)<br>
 ); <br>
 
@@ -141,7 +141,7 @@ CREATE TABLE cookenu_followers ( <br>
             "id": "Recipe's id", <br>
             "title": "recipe's title",<br>
             "description": "recipe's description", <br>
-            "createdAt": "20/02/2020"
+            "created_at": "20/02/2020"
         }<br>
 
 ***
@@ -155,18 +155,18 @@ CREATE TABLE cookenu_followers ( <br>
         Authorization: "Authentication token" <br>
     - Body: <br>
          { <br>
-            "userToFollowId": "User's id"<br>
+            "id": "User's id"<br>
         }<br>
 - Output: <br>
     - Body: <br>
          { <br>
-            "message": "Followed successfully"<br>
+            "message": "Following user"<br>
         }<br>
 - Attention: <br>
     - User's id must be validated, return message in case of error:
         - Empty;
         - Invalid;
-<!--
+
 ### UNFOLLOW USER
 - Method: POST <br>
 - Path: /user/unfollow <br>
@@ -175,18 +175,18 @@ CREATE TABLE cookenu_followers ( <br>
         Authorization: "Authentication token" <br>
     - Body: <br>
          { <br>
-            "userToUnfollowId": "User's id"<br>
+            "id": "User's id"<br>
         }<br>
 - Output: <br>
     - Body: <br>
          { <br>
-            "message": "Unfollowed successfully"<br>
+            "message": "User unfollowed"<br>
         }<br>
 - Attention: <br>
     - User's id must be validated, return message in case of error:
         - Empty;
         - Invalid;
-
+<!--
 ### GET RECIPE FEED
 - Method: GET <br>
 - Path: /user/feed <br>
