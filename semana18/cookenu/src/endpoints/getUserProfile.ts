@@ -7,7 +7,7 @@ import { getTokenData } from "../services/authenticator";
 export default async function getUserProfile(
     req:Request,
     res:Response
-    ){
+    ):Promise<void>{
     const token = req.headers.authorization as string
     const auth = getTokenData(token)
 

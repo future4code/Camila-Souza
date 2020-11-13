@@ -8,6 +8,7 @@ import getUserById from './endpoints/getUserById';
 import getUserProfile from './endpoints/getUserProfile';
 import createRecipe from './endpoints/createRecipe';
 import getRecipeById from './endpoints/getRecipeById';
+import { resetPassword } from './endpoints/resetPassword';
 
 const app: Express = express()
 app.use(express.json())
@@ -15,6 +16,7 @@ app.use(cors())
 
 app.post("/signup", createUser)
 app.post("/login", login)
+app.post("/user/password/reset", resetPassword)
 
 app.get("/user/profile", getUserProfile)
 app.get("/user/:id", getUserById)

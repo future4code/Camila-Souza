@@ -143,6 +143,9 @@ CREATE TABLE cookenu_followers ( <br>
             "description": "recipe's description", <br>
             "createdAt": "20/02/2020"
         }<br>
+
+***
+## CHALLENGE
 <!-- 
 ### FOLLOW USER
 - Method: POST <br>
@@ -200,4 +203,84 @@ CREATE TABLE cookenu_followers ( <br>
             "userId": "Recipe's creator id", <br>
             "userName": "Recipe's creator name"<br>
         }<br>
-*** -->
+
+### EDIT RECIPE
+- Method: POST <br>
+- Path: /recipe/:id <br>
+- Input: <br>
+    - Headers: <br>
+        - Authorization: "Authentication token" <br>
+    - Body: <br>
+        { <br>
+            "title": "recipe's title edited",<br>
+            "description": "recipe's description edited"<br>
+        }<br>
+- Attention: <br>
+    - User's id must be validated, return message in case of error:
+        - Empty;
+        - Invalid;
+
+### DELETE RECIPE
+- Method: DELETE <br>
+- Path: /recipe/:id <br>
+- Input: <br>
+    - Path Param: <br>
+        - "id": "Recipe's id" <br>
+    - Headers: <br>
+        - Authorization: "Authentication token" <br>
+- Output: <br>
+    - Body: <br>
+         { <br>
+            "message: Recipe removed"
+        }<br>
+- Attention: <br>
+    - User's id must be validated, return message in case of error:
+        - Empty;
+        - Invalid;
+    - Admin user must be capable to delete any recipe;
+
+### DELETE USER
+- Method: DELETE <br>
+- Path: /user/:id <br>
+- Input: <br>
+    - Path Param: <br>
+        - "id": "User's id" <br>
+    - Headers: <br>
+        - Authorization: "Authentication token" <br>
+- Output: <br>
+    - Body: <br>
+         { <br>
+            "message: User and user's recipes removed"
+        }<br>
+- Attention: <br>
+    - User's id must be validated, return message in case of error:
+        - Empty;
+        - Invalid;
+    - Admin user must be capable to delete any user;
+    - It must also delete:
+        - Deleted user's recipes;
+        - Deleted user's followiing list; -->
+
+### RESET PASSWORD
+- Method: POST <br>
+- Path: /user/password/reset <br>
+- Input: <br>
+    - Headers: <br>
+        - Authorization: "Authentication token" <br>
+    - Body: <br>
+        { <br>
+            "email": "fyodor@gmail.com",<br>
+            "newPassword": "012345"<br>
+        }<br>
+- Output: <br>
+    - Body: <br>
+         { <br>
+            "message: Password updated"<br>
+        }<br>
+    - Email: <br>
+        - Sens an e-mail with the new password to the user;
+- Attention: <br>
+    - User's id must be validated, return message in case of error:
+        - Empty;
+        - Invalid;
+***

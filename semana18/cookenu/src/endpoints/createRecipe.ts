@@ -4,7 +4,6 @@ import { Request, Response } from "express";
 import insertRecipe from "../data/insertRecipe";
 import { getTokenData } from "../services/authenticator";
 import generateId from "../services/generateId";
-import selectUserById from "../data/selectUserById";
 
 export default async function createRecipe(
     req: Request,
