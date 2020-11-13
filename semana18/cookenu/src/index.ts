@@ -13,6 +13,7 @@ import followUser from './endpoints/followUser';
 import unfollowUser from './endpoints/unfollowUser';
 import editRecipe from './endpoints/editRecipe';
 import deleteRecipe from './endpoints/deleteRecipe';
+import deleteUser from './endpoints/deleteUser';
 
 const app: Express = express()
 app.use(express.json())
@@ -26,6 +27,7 @@ app.post("/user/unfollow", unfollowUser)
 
 app.get("/user/profile", getUserProfile)
 app.get("/user/:id", getUserById)
+app.delete("/user/:id", deleteUser)
 
 app.post("/recipe", createRecipe)
 app.post("/recipe/:id", editRecipe)

@@ -1,16 +1,16 @@
 import { Request, Response } from "express";
 import { getTokenData } from "../services/authenticator";
-import deleteRecipeById from '../data/deleteRecipeById';
+import deleteUserById from '../data/deleteUserById';
 
 
-export default async function deleteRecipe(
+export default async function deleteUser(
     req:Request,
     res:Response
     ){
     const token = req.headers.authorization as string
     const auth = getTokenData(token)
 
-    let message = "Recipe removed"
+    let message = "User removed"
 
     try {
         const id: string = req.params.id
@@ -26,11 +26,11 @@ export default async function deleteRecipe(
          }
         if(!id){
             res.statusCode = 406
-            message = "Recipe not found"
+            message = "User not found"
             throw new Error(message)
         }
 
-        await deleteRecipeById(
+        await deleteUserById(
             id
         )
 

@@ -53,7 +53,8 @@ ADD role ENUM("normal", "admin") DEFAULT "normal"; <br>
         { <br>
             "name": "Fyodor",<br>
             "email": "fyodor@gmail.com",<br>
-            "password": 123456<br>
+            "password": "123456"<br>
+            "role": "normal" <br>
         }<br>
 - Output: <br>
     - Body: <br>
@@ -97,6 +98,7 @@ ADD role ENUM("normal", "admin") DEFAULT "normal"; <br>
             "id": "User's id",<br>
             "name": "Fyodor",<br>
             "email": "fyodor@gmail.com"<br>
+            "role": "normal"<br>
         }<br>
 
 ### GET USER BY ID
@@ -113,6 +115,7 @@ ADD role ENUM("normal", "admin") DEFAULT "normal"; <br>
             "id": "User's id",<br>
             "name": "Fyodor",<br>
             "email": "fyodor@gmail.com"<br>
+            "role": "normal"<br>
         }<br>
 
 ### CREATE RECIPE
@@ -240,7 +243,7 @@ ADD role ENUM("normal", "admin") DEFAULT "normal"; <br>
         - Empty;
         - Invalid;
     - Admin user must be capable to delete any recipe;
-<!--
+
 ### DELETE USER
 - Method: DELETE <br>
 - Path: /user/:id <br>
@@ -262,7 +265,7 @@ ADD role ENUM("normal", "admin") DEFAULT "normal"; <br>
     - It must also delete:
         - Deleted user's recipes;
         - Deleted user's followiing list;  
--->
+
 ### RESET PASSWORD
 - Method: POST <br>
 - Path: /user/password/reset <br>
