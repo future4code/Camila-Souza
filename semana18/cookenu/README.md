@@ -146,7 +146,7 @@ CREATE TABLE cookenu_followers ( <br>
 
 ***
 ## CHALLENGE
-<!-- 
+ 
 ### FOLLOW USER
 - Method: POST <br>
 - Path: /user/follow <br>
@@ -166,7 +166,7 @@ CREATE TABLE cookenu_followers ( <br>
     - User's id must be validated, return message in case of error:
         - Empty;
         - Invalid;
-
+<!--
 ### UNFOLLOW USER
 - Method: POST <br>
 - Path: /user/unfollow <br>
