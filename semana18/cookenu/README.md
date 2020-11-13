@@ -191,7 +191,7 @@ ADD role ENUM("normal", "admin") DEFAULT "normal"; <br>
     - User's id must be validated, return message in case of error:
         - Empty;
         - Invalid;
-<!-- 
+ 
 ### GET RECIPE FEED
 - Method: GET <br>
 - Path: /user/feed <br>
@@ -208,7 +208,7 @@ ADD role ENUM("normal", "admin") DEFAULT "normal"; <br>
             "userId": "Recipe's creator id", <br>
             "userName": "Recipe's creator name"<br>
         }<br> 
--->
+
 ### EDIT RECIPE
 - Method: POST <br>
 - Path: /recipe/:id <br>

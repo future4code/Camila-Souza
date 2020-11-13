@@ -4,11 +4,6 @@ import { connection } from '../constants/connection';
 export default async function deleteUserById(
     id:string
     ): Promise<void>{
-        await connection(tableUsers)
-        .delete()
-            .where({
-                "id": id
-            }) 
         await connection(tableRecipes) 
         .delete()
             .where({
@@ -18,10 +13,15 @@ export default async function deleteUserById(
             .delete()
             .where({
                 "followee_id": id
-                })
+            })
         await connection(tableFollow) 
             .delete()
             .where({
                 "following_id": id
-                })
+            })
+        await connection(tableUsers)
+            .delete()
+            .where({
+                "id": id
+            }) 
 }
