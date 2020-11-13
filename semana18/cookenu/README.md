@@ -186,7 +186,7 @@ CREATE TABLE cookenu_follow ( <br>
     - User's id must be validated, return message in case of error:
         - Empty;
         - Invalid;
-<!--
+<!-- 
 ### GET RECIPE FEED
 - Method: GET <br>
 - Path: /user/feed <br>
@@ -202,8 +202,8 @@ CREATE TABLE cookenu_follow ( <br>
             "createdAt": "20/02/2020", <br>
             "userId": "Recipe's creator id", <br>
             "userName": "Recipe's creator name"<br>
-        }<br>
-
+        }<br> 
+-->
 ### EDIT RECIPE
 - Method: POST <br>
 - Path: /recipe/:id <br>
@@ -219,7 +219,7 @@ CREATE TABLE cookenu_follow ( <br>
     - User's id must be validated, return message in case of error:
         - Empty;
         - Invalid;
-
+<!--
 ### DELETE RECIPE
 - Method: DELETE <br>
 - Path: /recipe/:id <br>
@@ -259,8 +259,8 @@ CREATE TABLE cookenu_follow ( <br>
     - Admin user must be capable to delete any user;
     - It must also delete:
         - Deleted user's recipes;
-        - Deleted user's followiing list; -->
-
+        - Deleted user's followiing list;  
+-->
 ### RESET PASSWORD
 - Method: POST <br>
 - Path: /user/password/reset <br>
