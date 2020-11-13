@@ -12,6 +12,7 @@ import { resetPassword } from './endpoints/resetPassword';
 import followUser from './endpoints/followUser';
 import unfollowUser from './endpoints/unfollowUser';
 import editRecipe from './endpoints/editRecipe';
+import deleteRecipe from './endpoints/deleteRecipe';
 
 const app: Express = express()
 app.use(express.json())
@@ -29,6 +30,7 @@ app.get("/user/:id", getUserById)
 app.post("/recipe", createRecipe)
 app.post("/recipe/:id", editRecipe)
 app.get("/recipe/:id", getRecipeById)
+app.delete("/recipe/:id", deleteRecipe)
 
 const server: Server = app.listen(process.env.PORT || 3003, () => {
     if (server) {

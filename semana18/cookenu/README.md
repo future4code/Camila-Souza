@@ -219,7 +219,7 @@ CREATE TABLE cookenu_follow ( <br>
     - User's id must be validated, return message in case of error:
         - Empty;
         - Invalid;
-<!--
+
 ### DELETE RECIPE
 - Method: DELETE <br>
 - Path: /recipe/:id <br>
@@ -238,7 +238,7 @@ CREATE TABLE cookenu_follow ( <br>
         - Empty;
         - Invalid;
     - Admin user must be capable to delete any recipe;
-
+<!--
 ### DELETE USER
 - Method: DELETE <br>
 - Path: /user/:id <br>
