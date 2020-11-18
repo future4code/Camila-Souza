@@ -1,5 +1,5 @@
 import { hash } from './../../services/hashManager';
-import { generateId } from './../../services/idGeneratos';
+import { generateId } from '../../services/idGenerator';
 import { CreateUserInput } from './../../model/User';
 import { generateToken } from '../../services/authenticator';
 import insertUser from '../../data/user/insertUser';

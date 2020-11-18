@@ -23,7 +23,7 @@ app.post('/posts/create', async (req: Request, res: Response) => {
    try {
       let message = "Success!"
 
-      const { photo, description, type } = req.body
+      // const { photo, description, type } = req.body
 
       const token: string = req.headers.authorization as string
 
@@ -40,15 +40,15 @@ app.post('/posts/create', async (req: Request, res: Response) => {
             author_id: tokenData.id
          })
 
-      res.status(201).send({ message })
+//       res.status(201).send({ message })
 
-   } catch (error) {
-      let message = error.sqlMessage || error.message
-      res.statusCode = 400
+//    } catch (error) {
+//       let message = error.sqlMessage || error.message
+//       res.statusCode = 400
 
-      res.send({ message })
-   }
-})
+//       res.send({ message })
+//    }
+// })
 
 app.get('/posts/:id', async (req: Request, res: Response) => {
    try {

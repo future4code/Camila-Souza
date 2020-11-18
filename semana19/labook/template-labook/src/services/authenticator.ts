@@ -1,7 +1,8 @@
 import { AuthenticationData } from './../model/User';
 import * as jwt from "jsonwebtoken"
 
-export function generateToken(
+class Authenticator {
+public generateToken(
     payload: AuthenticationData
  ): string {
     return jwt.sign(
@@ -13,7 +14,7 @@ export function generateToken(
     )
  }
  
- export function getTokenData(
+public getTokenData(
     token: string
  ): AuthenticationData {
     const result: any = jwt.verify(
@@ -23,3 +24,5 @@ export function generateToken(
  
     return { id: result.id, }
  }
+}
+export default new Authenticator()
