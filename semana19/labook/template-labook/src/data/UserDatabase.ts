@@ -36,7 +36,11 @@ class UserDatabase extends BaseDatabase {
             throw new Error("Invalid credentials")
          }
        
-        return new User(input[0].id, input[0].name, input[0].email, input[0].password)
+        return new User(
+            input[0].id, 
+            input[0].name, 
+            input[0].email, 
+            input[0].password)
 
     } catch (error) {
         throw new Error("Database error: " + error.slqMessage)

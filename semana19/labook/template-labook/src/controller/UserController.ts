@@ -14,8 +14,8 @@ class UserController {
             const input: CreateUserInput = { 
                 name: req.body.name, 
                 email: req.body.email, 
-                password: req.body.password }
-    
+                password: req.body.password 
+            }
             const token = await UserBusiness.signup(input);
     
             res

@@ -1,14 +1,13 @@
-import { AuthenticationData, User } from './../model/User';
+import { AuthenticationData } from './../model/User';
 import Authenticator from '../services/authenticator';
 import IdGenerator from '../services/idGenerator';
 import { CreatePostInput, GetPostByIdInput, Post } from './../model/Post';
 import moment from "moment";
-import PostDatabase from '../data/PostDatabase';
+import postDatabase from '../data/PostDatabase';
 
 class PostBusiness {
     public async createPost(
-        input: CreatePostInput,
-        output: User,
+        input: CreatePostInput
         ): Promise<string> {
         let message = "Success!"
         try {
@@ -21,19 +20,16 @@ class PostBusiness {
             throw new Error(message);
         }
         const id: string = IdGenerator.generateId()
-        const token: string = Authenticator.generateToken({
-            id: output.getId()
-        }) as string
-        const author_id = output.getId() as string
-        const tokenData: AuthenticationData = Authenticator.getTokenData(token)
-        
+        const tokenData: AuthenticationData = Authenticator.getTokenData(input.token)
+        const author_id: string = tokenData.id
+
         if(
             !tokenData
         ){
             message = 'Unauthorized';
             throw new Error(message);
         }
-        const createdAtMoment = moment().format("DD/MM/YYYY")
+        const createdAtMoment = moment().format("YYYY-MM-DD")
 
         const newPost: Post = new Post(
             id,
@@ -43,8 +39,8 @@ class PostBusiness {
             createdAtMoment,
             author_id
         )
-
-        await PostDatabase.createPost(newPost)
+            console.log(newPost)
+        await postDatabase.createPost(newPost)
 
         return message
 
@@ -53,29 +49,22 @@ class PostBusiness {
             return message; 
         }
     }
-    public async getPostById(input: GetPostByIdInput): Promise<string>{
-        let message = "Success!"
+    public async getPostById(input: GetPostByIdInput): Promise<Post>{
         try {
             if(
                 !input.id
                 ){
-                message = '"Id" must be provided';
-                throw new Error(message);
+                throw new Error('"Id" must be provided');
              }
-            const id = input.id
-            const token: string = Authenticator.generateToken({id}) as string
-            const tokenData: AuthenticationData = Authenticator.getTokenData(token)
-            if(
-                !tokenData
-            ){
-                message = 'Unauthorized';
-                throw new Error(message);
-            }
-            return message
+            
+            Authenticator.getTokenData(input.token)
+
+            const post: Post = await postDatabase.getPostById(input.id)
+    
+            return post
 
         } catch (error) {
-            let message = error.sqlMessage || error.message
-            return message; 
+            throw new Error(error.message)
         }
     }
 }

@@ -1,6 +1,6 @@
 enum POST_TYPES {
-  NORMAL = "normal",
-  EVENT = "event"
+  NORMAL = "NORMAL",
+  EVENT = "EVENT"
 }
 
 export class Post {
@@ -40,18 +40,20 @@ export class Post {
 export interface CreatePostInput {
    photo: string,
    description: string,
-   type: string
+   type: string,
+   token: string
 }
 
 export interface GetPostByIdInput {
-  id: string
+  id: string,
+  token: string
 }
 
 export function postTypeToString(type: POST_TYPES): string {
-  if (type === "event"){
-    return "event";
+  if (type === "EVENT"){
+    return "EVENT";
   }
-  return "normal";
+  return "NORMAL";
 }
 
 

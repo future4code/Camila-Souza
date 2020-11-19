@@ -1,8 +1,8 @@
 import { CreatePostInput, GetPostByIdInput } from './../model/Post';
 import { Request, Response } from "express";
 import PostDatabase from '../data/PostDatabase';
-import { Post } from "../model/Post"
-import PostBusiness from '../business/PostBusiness';
+import { Post } from "../model/Post";
+import postBusiness from "../business/PostBusiness";
 
 class PostController{
     public async createPost(
@@ -13,44 +13,42 @@ class PostController{
             const input: CreatePostInput = {
                 photo: req.body.photo,
                 description: req.body.description,
-                type: req.body.type
+                type: req.body.type,
+                token: req.headers.authorization!
             }
             
             if(!input){
                 throw new Error("'Photo', 'description' and 'type' must be fill")
             }
-           
+           const message = await postBusiness.createPost(input)
+
             res
-            .status(200)
+            .status(200).send({message})
         } catch (error) {
             res
-            .status(400)
+            .status(400).send(error.message)
         }
     }
     public async getPostById(
         req:Request,
         res:Response
     ){
+        let message = "Sucesso"
         try {
-            const output: Post = await PostDatabase.getPostById(req.params.id)
-
-            if(!output){
-                throw new Error("Post not found")
+            const input: GetPostByIdInput = {
+                id: req.params.id,
+                token: req.headers.authorization!
             }
-           
+
+            const post: Post = await postBusiness.getPostById(input)
+
+
             res
             .status(200)
-            .send({
-                id: output.getId(),
-                photo: output.getPhoto(),
-                description: output.getDescription(),
-                type: output.getType(),
-                createdAt: output.getCreatedAt(),
-                authorId: output.getAuthorId()
-            })
+            .send({message, post})
         } catch (error) {
             res
-            .status(400)
+            .status(400).send(error.message)
         }
     }
 }

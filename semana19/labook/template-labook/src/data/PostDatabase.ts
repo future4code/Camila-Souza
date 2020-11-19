@@ -41,8 +41,8 @@ class PostDatabase extends BaseDatabase {
                 output[0].photo,
                 output[0].description,
                 output[0].type,
-                output[0].createAt,
-                output[0].authorid
+                output[0].create_at,
+                output[0].author_id
                 )
         } catch (error) {
             throw new Error("Database error: " + error.sqlMessage)
