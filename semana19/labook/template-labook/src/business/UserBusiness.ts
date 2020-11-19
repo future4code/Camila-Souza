@@ -1,8 +1,7 @@
 import UserDatabase from '../data/UserDatabase';
 import HashManager from '../services/hashManager';
 import IdGenerator from '../services/idGenerator';
-import { CreateUserInput, User } from './../model/User';
-import { AuthenticationData } from './../model/User';
+import { CreateUserInput, User, AuthenticationData } from './../model/User';
 import Authenticator from '../services/authenticator';
 
 class UserBusiness {
@@ -10,8 +9,11 @@ class UserBusiness {
         try {
             let message = "Success!"
         
-            if (!input.name || !input.email || !input.password) {
-               message = '"name", "email" and "password" must be provided'
+            if (
+               !input.name || 
+               !input.email || 
+               !input.password) {
+               message = "'name', 'email' and 'password' must be provided"
                throw new Error(message)
             }
         
@@ -38,29 +40,37 @@ class UserBusiness {
          }
     }
 
-    public login =  async (input: any): Promise<any> => {
+    public async login (input: any): Promise<any> {
         try {
             let message = "Success!"
             
-            const user: User = await UserDatabase.getUserByEmail(input.email)
-      
             if (!input.email || !input.password) {
-               message = '"email" and "password" must be provided'
+               message = "'email' and 'password' must be provided"
                throw new Error(message)
             }
+            
+            const user: User = await UserDatabase.getUserByEmail(input.email)
+
+            const passwordIsTrue: boolean = await HashManager.compare(input.password, user.getPassword())
       
-            const passwordIsCorrect: boolean = await HashManager.compare(input.password, user.getPassword())
-      
-            if (!passwordIsCorrect) {
+            const token: string = Authenticator.generateToken({
+               id: input.id
+            }) as string
+            
+            if (!user) {
+               message = "User not found"
+               throw new Error(message)
+            }
+
+            
+            if (!passwordIsTrue) {
                message = "Invalid credentials"
                throw new Error(message)
             }
-            const id: string = input.id
-            const token: string = Authenticator.generateToken({id}) as string
             const tokenData: AuthenticationData = Authenticator.getTokenData(token)
         
             if(!tokenData){
-                message = 'Unauthorized';
+                message = "Unauthorized";
                 throw new Error(message);
             }
 

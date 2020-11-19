@@ -4,27 +4,18 @@ enum POST_TYPES {
 }
 
 export class Post {
-    private id: string
-    private photo: string
-    private description: string
-    private type: POST_TYPES
-    private createdAt: string
-    private authorId: string
-
-    constructor(
-      id: string,
-      photo: string,
-      description: string,
+  
+  private type: POST_TYPES
+  
+  constructor(
+      private id: string,
+      private photo: string,
+      private description: string,
       type: string,
-      createdAt: string,
-      authorId: string,
+      private createdAt: string,
+      private authorId: string,
     ) {
-      this.id = id
-      this.photo = photo
-      this.description = description
-      this.createdAt = createdAt
-      this.authorId = authorId
-
+      
       if(type.toUpperCase() === POST_TYPES.NORMAL){
         this.type = POST_TYPES.NORMAL
       } else if (type.toUpperCase() === POST_TYPES.EVENT){
@@ -36,8 +27,8 @@ export class Post {
     public getId = () => this.id
     public getPhoto = () => this.photo
     public getDescription = () => this.description
-    public getType = (): POST_TYPES => this.type
-    public getCreateAt = () => this.createdAt
+    public getType = () => this.type
+    public getCreatedAt = () => this.createdAt
     public getAuthorId = () => this.authorId
 
     public setType(type: POST_TYPES){

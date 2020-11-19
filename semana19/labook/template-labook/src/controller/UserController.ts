@@ -1,6 +1,6 @@
 import { Request, Response } from "express"
 import UserBusiness from "../business/UserBusiness";
-import { CreateUserInput, User } from "../model/User"
+import { CreateUserInput } from "../model/User"
 
 
 
@@ -21,7 +21,7 @@ class UserController {
             res
             .status(201)
             .send({
-                message: "Usuário criado",
+                message: "User created",
                 token
             })
         } catch (error) {
@@ -35,11 +35,11 @@ class UserController {
             res:Response
             ): Promise<void> {
                 try {
-                    const loginInput ={ 
-                        email: req.body.name,
+                    const input ={ 
+                        email: req.body.email,
                         password: req.body.password }
               
-                    const token = await UserBusiness.login(loginInput)
+                    const token = await UserBusiness.login(input)
                     
                     res
                     .status(200)
@@ -52,3 +52,4 @@ class UserController {
                  }
               }
     }
+    export default new UserController()

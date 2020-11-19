@@ -1,28 +1,29 @@
-import { connection } from './connection';
 import { Post } from './../model/Post';
+import BaseDatabase from './BaseDatabase';
 
-class PostDatabase {
-    private tableName: string = "labook_posts"
+class PostDatabase extends BaseDatabase {
+  
+    private static tableName: string = "labook_posts"
 
-    public getTableName = (): string => this.tableName
+    public getTableName = (): string => PostDatabase.tableName
 
     public async createPost(
-        newPost: Post
+        post: Post
     ) {
 
         try {
-            await connection
+            await BaseDatabase.connection
             .insert({
-                id: newPost.getId(),
-                photo: newPost.getPhoto(),
-                description: newPost.getDescription(),
-                type: newPost.getType(),
-                createAt: newPost.getCreateAt(),
-                authorId: newPost.getAuthorId()
+                id: post.getId(),
+                photo: post.getPhoto(),
+                description: post.getDescription(),
+                type: post.getType(),
+                created_at: post.getCreatedAt(),
+                author_id: post.getAuthorId()
             })
-            .into(this.tableName)
+            .into(PostDatabase.tableName)
         } catch (error) {
-            throw new Error("Erro de banco de dados: " + error.sqlMessage)
+            throw new Error("Database error: " + error.sqlMessage)
         }
     }
 
@@ -30,10 +31,10 @@ class PostDatabase {
         id: string
     ): Promise<Post> {
         try {
-            const output = await connection
+            const output = await BaseDatabase.connection
             .select("*")
             .where({ id })
-            .from(this.tableName)
+            .from(PostDatabase.tableName)
            
             return new Post (
                 output[0].id,
@@ -41,10 +42,10 @@ class PostDatabase {
                 output[0].description,
                 output[0].type,
                 output[0].createAt,
-                output[0].authorid)
-                 
+                output[0].authorid
+                )
         } catch (error) {
-            throw new Error("Erro de banco de dados: " + error.sqlMessage)
+            throw new Error("Database error: " + error.sqlMessage)
         }
     }
 }

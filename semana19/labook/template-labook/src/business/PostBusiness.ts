@@ -1,12 +1,15 @@
-import { AuthenticationData } from './../model/User';
+import { AuthenticationData, User } from './../model/User';
 import Authenticator from '../services/authenticator';
-import idGenerator from '../services/idGenerator';
-import { CreatePostInput, GetPostByIdInput, postTypeToString } from './../model/Post';
+import IdGenerator from '../services/idGenerator';
+import { CreatePostInput, GetPostByIdInput, Post } from './../model/Post';
 import moment from "moment";
 import PostDatabase from '../data/PostDatabase';
 
 class PostBusiness {
-    public async createPost(input: CreatePostInput): Promise<string> {
+    public async createPost(
+        input: CreatePostInput,
+        output: User,
+        ): Promise<string> {
         let message = "Success!"
         try {
             if(
@@ -17,9 +20,11 @@ class PostBusiness {
             message = '"name", "email" and "password" must be provided';
             throw new Error(message);
         }
-        
-        const id: string = idGenerator.generateId() as string
-        const token: string = Authenticator.generateToken({id}) as string
+        const id: string = IdGenerator.generateId()
+        const token: string = Authenticator.generateToken({
+            id: output.getId()
+        }) as string
+        const author_id = output.getId() as string
         const tokenData: AuthenticationData = Authenticator.getTokenData(token)
         
         if(
@@ -30,15 +35,16 @@ class PostBusiness {
         }
         const createdAtMoment = moment().format("DD/MM/YYYY")
 
-        await PostDatabase.createPost({
+        const newPost: Post = new Post(
             id,
-            photo: input.photo,
-            description: input.description,
-            type: input.type,
-            createdAt: createdAtMoment,
-            authorId: token.id
+            input.photo,
+            input.description,
+            input.type,
+            createdAtMoment,
+            author_id
+        )
 
-        })
+        await PostDatabase.createPost(newPost)
 
         return message
 

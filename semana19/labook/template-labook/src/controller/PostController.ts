@@ -2,6 +2,7 @@ import { CreatePostInput, GetPostByIdInput } from './../model/Post';
 import { Request, Response } from "express";
 import PostDatabase from '../data/PostDatabase';
 import { Post } from "../model/Post"
+import PostBusiness from '../business/PostBusiness';
 
 class PostController{
     public async createPost(
@@ -14,6 +15,7 @@ class PostController{
                 description: req.body.description,
                 type: req.body.type
             }
+            
             if(!input){
                 throw new Error("'Photo', 'description' and 'type' must be fill")
             }
@@ -43,7 +45,7 @@ class PostController{
                 photo: output.getPhoto(),
                 description: output.getDescription(),
                 type: output.getType(),
-                createdAt: output.getCreateAt(),
+                createdAt: output.getCreatedAt(),
                 authorId: output.getAuthorId()
             })
         } catch (error) {

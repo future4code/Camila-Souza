@@ -3,21 +3,12 @@ export type AuthenticationData = {
  }
  
  export class User {
-    private id: string
-    private name: string
-    private email: string
-    private password: string
-
     constructor(
-      id: string,
-      name: string,
-      email: string,
-      password: string
+      private id: string,
+      private name: string,
+      private email: string,
+      private password: string
     ){
-      this.id = id
-      this.name = name
-      this.email = email
-      this.password = password
     }
  
    public getId = (): string => this.id
@@ -26,11 +17,13 @@ export type AuthenticationData = {
    public getPassword = (): string => this.password
    
 }
+
  export type CreateUserInput = {
     name: string,
     email: string,
     password: string
  }
+ 
  export type CreateUserOutput = {
    token: string
 }
