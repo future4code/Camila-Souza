@@ -1,7 +1,7 @@
 export type AuthenticationData = {
     id: string
  }
- 
+//--------------------------------------
  export class User {
     constructor(
       private id: string,
@@ -10,20 +10,30 @@ export type AuthenticationData = {
       private password: string
     ){
     }
- 
+//--------------------------------------
    public getId = (): string => this.id
    public getName = (): string => this.name
    public getEmail = (): string => this.email
    public getPassword = (): string => this.password
    
 }
-
- export type CreateUserInput = {
+//--------------------------------------
+ export interface CreateUserInput {
     name: string,
     email: string,
     password: string
  }
- 
- export type CreateUserOutput = {
+//-------------------------------------- 
+ export interface CreateUserOutput {
    token: string
 }
+//--------------------------------------
+export interface getUserIdInput {
+   id: string
+}
+//--------------------------------------
+export interface AddFriend {
+   id: string,
+   token: string
+}
+//--------------------------------------

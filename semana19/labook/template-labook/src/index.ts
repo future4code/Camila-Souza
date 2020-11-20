@@ -1,9 +1,9 @@
+/**************************** IMPORTS ******************************/
 import express, { Express, Request, Response } from "express"
 import cors from "cors"
 import { Server } from "http"
 import { postRouter } from './routes/postRoutes';
 import { userRouter } from './routes/userRoutes';
-
 /**************************** CONFIG ******************************/
 const app: Express = express()
 app.use(express.json())

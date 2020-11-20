@@ -8,12 +8,13 @@ class HashManager {
       const salt = await bcrypt.genSalt(rounds);
       return bcrypt.hash(plainText, salt)
    }
-   
+//--------------------------------------   
    public compare = async (
       plainText: string, 
       cypherText: string
    ): Promise<boolean> => {
       return bcrypt.compare(plainText, cypherText)
    }
+//--------------------------------------
 }
 export default new HashManager()

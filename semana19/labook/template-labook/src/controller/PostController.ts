@@ -1,6 +1,5 @@
 import { CreatePostInput, GetPostByIdInput } from './../model/Post';
 import { Request, Response } from "express";
-import PostDatabase from '../data/PostDatabase';
 import { Post } from "../model/Post";
 import postBusiness from "../business/PostBusiness";
 
@@ -29,11 +28,12 @@ class PostController{
             .status(400).send(error.message)
         }
     }
+//--------------------------------------
     public async getPostById(
         req:Request,
         res:Response
     ){
-        let message = "Sucesso"
+        let message = "Sucess!"
         try {
             const input: GetPostByIdInput = {
                 id: req.params.id,
@@ -51,5 +51,6 @@ class PostController{
             .status(400).send(error.message)
         }
     }
+//--------------------------------------
 }
 export default new PostController()

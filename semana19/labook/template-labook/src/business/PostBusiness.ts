@@ -1,3 +1,4 @@
+import { CustomError } from './../services/customError';
 import { AuthenticationData } from './../model/User';
 import Authenticator from '../services/authenticator';
 import IdGenerator from '../services/idGenerator';
@@ -16,18 +17,16 @@ class PostBusiness {
                 !input.description || 
                 !input.type
             ){
-            message = '"name", "email" and "password" must be provided';
-            throw new Error(message);
+            throw new CustomError(406, "'photo', 'description' and 'type' must be provided")
         }
         const id: string = IdGenerator.generateId()
         const tokenData: AuthenticationData = Authenticator.getTokenData(input.token)
-        const author_id: string = tokenData.id
+        const author_id: string = tokenData.id as string
 
         if(
             !tokenData
         ){
-            message = 'Unauthorized';
-            throw new Error(message);
+            throw new CustomError(401, "Unauthorized")
         }
         const createdAtMoment = moment().format("YYYY-MM-DD")
 
@@ -45,16 +44,16 @@ class PostBusiness {
         return message
 
         } catch (error) {
-            let message = error.sqlMessage || error.message
-            return message; 
+            throw new CustomError(400, error.message) 
         }
     }
+//--------------------------------------
     public async getPostById(input: GetPostByIdInput): Promise<Post>{
         try {
             if(
                 !input.id
                 ){
-                throw new Error('"Id" must be provided');
+                    throw new CustomError(406, "'id' must be provided")
              }
             
             Authenticator.getTokenData(input.token)
@@ -64,8 +63,9 @@ class PostBusiness {
             return post
 
         } catch (error) {
-            throw new Error(error.message)
+            throw new CustomError(400, error.message)
         }
     }
+//--------------------------------------
 }
 export default new PostBusiness()

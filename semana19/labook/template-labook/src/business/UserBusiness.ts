@@ -1,20 +1,19 @@
+import { CustomError } from './../services/customError';
 import UserDatabase from '../data/UserDatabase';
 import HashManager from '../services/hashManager';
 import IdGenerator from '../services/idGenerator';
-import { CreateUserInput, User, AuthenticationData } from './../model/User';
+import { CreateUserInput, User, AuthenticationData, AddFriend } from './../model/User';
 import Authenticator from '../services/authenticator';
 
 class UserBusiness {
     public async signup(input: CreateUserInput): Promise<string> {
         try {
-            let message = "Success!"
-        
             if (
                !input.name || 
                !input.email || 
-               !input.password) {
-               message = "'name', 'email' and 'password' must be provided"
-               throw new Error(message)
+               !input.password
+               ) {
+               throw new CustomError(406, "'name', 'e-mail' and 'password' must be provided")
             }
         
             const id: string = IdGenerator.generateId()
@@ -33,20 +32,19 @@ class UserBusiness {
             return token;
         
          } catch (error) {
-
-            let message = error.sqlMessage || error.message
-            return message;
+            throw new CustomError(400, error.message)
 
          }
     }
-
+//--------------------------------------
     public async login (input: any): Promise<any> {
+       let message = "success"
         try {
-            let message = "Success!"
-            
-            if (!input.email || !input.password) {
-               message = "'email' and 'password' must be provided"
-               throw new Error(message)
+            if (
+               !input.email || 
+               !input.password
+               ) {
+               throw new CustomError(406, "'e-mail' and 'password' must be provided")
             }
             
             const user: User = await UserDatabase.getUserByEmail(input.email)
@@ -58,20 +56,17 @@ class UserBusiness {
             }) as string
             
             if (!user) {
-               message = "User not found"
-               throw new Error(message)
+               throw new CustomError(404, "User not found")
             }
 
             
             if (!passwordIsTrue) {
-               message = "Invalid credentials"
-               throw new Error(message)
+               throw new CustomError(401, "Invalid credentials")
             }
             const tokenData: AuthenticationData = Authenticator.getTokenData(token)
         
             if(!tokenData){
-                message = "Unauthorized";
-                throw new Error(message);
+               throw new CustomError(401, "Unauthorized")
             }
 
             return ({
@@ -80,10 +75,31 @@ class UserBusiness {
             })
            
          } catch (error) {
-            let message = error.sqlMessage || error.message
-            return message
+            throw new CustomError(400, error.message)
          }
       }
-
+//--------------------------------------
+   public async addFriendById(
+      input: AddFriend
+      ): Promise<string>{
+      try {
+         if(!input.id){
+               throw new CustomError(406, "'id' must be provided")
+            }
+         const tokenData: AuthenticationData = Authenticator.getTokenData(input.token)
+         const friend1: string = tokenData.id!
+         const friend2: string = await UserDatabase.getUserById(input.id)
+         
+         const friends = await UserDatabase.addFriendById(
+            friend1,
+            friend2
+         ) 
+         return friends
+      } 
+      catch (error) {
+         throw new CustomError(400, error.message)
+      }
+   }
+//--------------------------------------
 }
 export default new UserBusiness()

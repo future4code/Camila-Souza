@@ -26,7 +26,7 @@ class PostDatabase extends BaseDatabase {
             throw new Error("Database error: " + error.sqlMessage)
         }
     }
-
+//--------------------------------------
     public async getPostById(
         id: string
     ): Promise<Post> {
@@ -48,6 +48,7 @@ class PostDatabase extends BaseDatabase {
             throw new Error("Database error: " + error.sqlMessage)
         }
     }
+//--------------------------------------
 }
 
 export default new PostDatabase()

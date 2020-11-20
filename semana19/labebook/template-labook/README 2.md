@@ -92,14 +92,3 @@
 
       {"message":"Success!","post":{"id":"e4eb1531-d814-4742-b614-be2a36602548","photo":"https://i.picsum.photos/id/238/200/200.jpg?hmac=O4Jc6lqHVfaKVzLf8bWssNTbWzQoaRUC0TDXod9xDdM","description":"My city is beautiful =D","type":"normal","createdAt":"2020-11-17T17:47:15.000Z","authorId":"898bc45e-11f1-4a23-896a-7f2e29cfe012"}}% 
       ```
-
-## Tables
-
-1. Labook_friends
-```
-CREATE TABLE labook_friends(
-   friend1_id VARCHAR(255),
-   friend2_id VARCHAR(255),
-   FOREIGN KEY(friend1_id) REFERENCES labook_users(id)
-   FOREIGN KEY(friend2_id) REFERENCES labook_users(id)
-   )

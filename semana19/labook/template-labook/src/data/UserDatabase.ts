@@ -1,9 +1,11 @@
-import { User } from './../model/User';
+import { CustomError } from './../services/customError';
+import { User, AddFriend, getUserIdInput } from './../model/User';
 import BaseDatabase from './BaseDatabase';
 
 class UserDatabase extends BaseDatabase {
 
     private static tableName: string = "labook_users"
+    private static tableFriends: string = "labook_friends"
  
     public getTableName = (): string => UserDatabase.tableName
  
@@ -21,7 +23,7 @@ class UserDatabase extends BaseDatabase {
         throw new Error("Database error: " + error.sqlMessage);
         }
     }
-
+//--------------------------------------
     public async getUserByEmail(
         email: string
      ): Promise<User> {
@@ -33,7 +35,7 @@ class UserDatabase extends BaseDatabase {
             
          console.log(input)
          if (!input) {
-            throw new Error("Invalid credentials")
+            throw new CustomError(401, "Invalid credentials")
          }
        
         return new User(
@@ -46,5 +48,42 @@ class UserDatabase extends BaseDatabase {
         throw new Error("Database error: " + error.slqMessage)
         }
     }
+//--------------------------------------
+public async getUserById(
+    id: string
+ ): Promise<any> {
+    try {
+    const input: any = await BaseDatabase.connection
+        .select("*")
+        .where({ id })
+        .from(UserDatabase.tableName)
+        
+     if (!input) {
+        throw new CustomError(401, "Invalid credentials")
+     }
+    } catch (error) {
+        throw new Error("Database error: " + error.slqMessage)
+    }
+}
+//--------------------------------------
+    public async addFriendById(
+        friend1:string,
+        friend2:string
+        ): Promise<any> {
+   
+                await BaseDatabase.connection
+                    .insert({
+                        "friend1": friend1,
+                        "friend2": friend2
+                    })
+                    .into(UserDatabase.tableFriends) 
+                await BaseDatabase.connection
+                    .insert({
+                        "friend1": friend2,
+                        "friend2": friend1
+                    })
+                    .into(UserDatabase.tableFriends)
+        }
+//--------------------------------------   
 }
 export default new UserDatabase()   
