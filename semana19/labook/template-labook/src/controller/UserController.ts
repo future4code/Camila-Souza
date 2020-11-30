@@ -59,7 +59,7 @@ class UserController {
     ): Promise<any>{
         try {
             const input: AddFriend = {
-                id: req.body.id,
+                id: req.params.id,
                 token: req.headers.authorization!
             }
 

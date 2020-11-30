@@ -89,7 +89,7 @@ class UserBusiness {
          const tokenData: AuthenticationData = Authenticator.getTokenData(input.token)
          const friend1: string = tokenData.id!
          const friend2: string = input.id
-         
+         console.log(friend1, friend2)
          const friends = await UserDatabase.addFriendById(
             friend1,
             friend2
